@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>媒体查询</title>
+    <style lang="">
+
+
+        *{
+            box-sizing: border-box;
+        }
+        section{
+            margin: 0 auto;
+            width: 1600px;
+            display: flex;
+            background-color: yellow;
+            flex-wrap: wrap;
+        }
+        .box{
+            width: 400px;
+            height: 200px;
+            border: solid 2px red;
+        }
+
+        /* @media,媒体查询，它赋予了CSS判断设备类型和屏幕尺寸的能力 */
+        /* 
+            @media(条件1，条件2....){
+                样式.......
+            }
+
+            媒体查询中的样式仅在条件成立时生效
+         */
+
+        
+        /* max-width: 1600px，视口小于1600px时 */
+        @media (max-width: 1600px) {
+            section{
+                background-color: aqua;
+                width: 1200px;
+            }
+        }
+
+        @media (max-width:1200px) {
+            section{
+                background-color: rgb(21, 255, 0);
+                width: 800px;
+            }
+        }
+
+        @media (max-width: 800px) {
+            section{
+                background-color: rgb(255, 136, 0);
+                width: 100%;
+            }
+            .box{
+                width: 100%;
+                height: 50vw;
+            }
+        }
+
+        /* max-aspect-ratio:1，屏幕宽高比小于1时 */
+        @media (max-aspect-ratio:1/1) {
+            .box{
+                /* height: 300px; */
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <section>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </section>
+
+    
+</body>
+</html>
