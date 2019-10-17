@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css关键帧动画</title>
+    <style lang="">
+        body{
+            margin: 0;
+        }
+        #box{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: red;
+
+            /* animation，设置元素的动画样式，要显示动画，至少要设置动画名字和动画时间 */
+            /* animation: move 2s; */
+
+            /* 动画名称 */
+            animation-name: move;
+            /* 动画单次执行时间 */
+            animation-duration: 2s;
+            /* 动画结束时，让元素保持动画结束时的样式 */
+            animation-fill-mode: both;
+            /* 动画延迟开始时间，可以设置为负值，表示动画提前开始（如果设置为-0.7s，则动画从0.7s处开始执行） */
+            animation-delay: -0.7s;
+        }
+
+        /* @keyframes，创建一个关键帧动画，空格后面是动画名字,{}中设定每一个关键帧的样式状态 */
+        @keyframes move{
+            0%{
+                left: 0;
+                top: 0;
+            }
+            25%{
+                left: 100px;
+                top: 0;
+            }
+            50%{
+                left: 100px;
+                top: 100px;
+            }
+            75%{
+                left: 200px;
+                top: 100px;
+            }
+            100%{
+                left: 200px;
+                top: 200px;
+            }
+        }
+
+
+        @keyframes spin {
+            0%{
+                transform: rotate(0);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+
+        #d2{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            margin: 40px auto;
+
+            animation: spin 4s;
+
+            /* 设置动画重复次数，infinite表示无穷次 */
+            animation-iteration-count: infinite;
+
+            /* 每两个关键帧之间动画的速率 */
+            animation-timing-function: linear;
+        }
+
+        #d2:hover{
+            /* 设置动画状态，running为执行状态，pause为暂停状态 */
+            /* animation-play-state: paused; */
+
+            /* 设置动画执行方向 */
+            animation-direction: reverse;
+
+        }
+
+        /* 
+            css过渡和动画的区别和联系：
+            都能实现动画，过渡只能在元素样式发生改变时为这个改变添加动画，不能设置多个关键帧。而关键帧动画是一个动画方式，能够详细设置每一个关键帧的状态，一个动画设计完成时，可以添加到多个元素上。
+         */
+        
+
+    </style>
+</head>
+<body>
+    <div id="box">
+        
+    </div>
+
+    <div id="d2"></div>
+</body>
+</html>

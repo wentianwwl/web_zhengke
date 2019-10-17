@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css过渡</title>
+    <style lang="">
+        #box{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin: 0 auto;
+            border: solid 0 red;
+            text-align: center;
+            line-height: 100px;
+            /* 一个元素的样式改变时，默认修改会在瞬间完成 */
+            /* 如果希望这个修改以动画的形式逐渐改变，则可以为这个元素添加过渡效果 */
+
+            /* transition，设置元素过渡，至少要设置过度的样式和过度时间，还可以设置过度的速率，速率默认为ease-in-out(开始慢，结束慢，中间快)，linear为匀速 */
+
+            /* 如果多个样式需要同时过度，则过度的名称写为all，基本上所有和外观先关的样式都能过度（并不是所有样式都能过度，例如display,text-align等） */
+
+            /* 要过度的属性必须有初始值 */
+            transition: all 700ms;
+
+            /* box-shadow，设置元素阴影，5个参数分别表示：横向偏移量，纵向偏移量，模糊程度，阴影大小，阴影颜色 */
+            /* box-shadow: 2px 2px 10px 0px grey; */
+
+        }
+
+        #box:hover{
+            line-height: 150px;
+            transform: rotate(180deg);
+            background-color: yellow;
+            border: solid 10px red;
+            width: 150px;
+            height: 150px;
+            opacity: 0.7;
+            border-radius: 50%;
+        }
+
+        #box:active{
+            box-shadow: 0 0 100px 0 red;
+            /* 以上所有样式都可过度 */
+        }
+
+        /* 过度只能实现一些简单的动画：从一个状态到另一个状态（只能设置开始关键帧和结束关键帧），不能设置中间状态。不能完成多个关键帧的动画。 */
+
+
+    </style>
+</head>
+<body>
+    <div id="box">
+        字体大小
+    </div>
+</body>
+</html>

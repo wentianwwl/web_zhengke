@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            margin: 0;
+        }
+        .cell{
+            border: solid 1px black;
+            padding: 5px 10px;
+        }
+
+        .img-box,.content{
+            float: left;
+        }
+
+        .content{
+            margin-left: 10px;
+            width: calc(100% - 20vw - 10px);
+        }
+
+        .clear-fix:after{
+            content: "";
+            display: block;
+            clear: both;
+            
+        }
+
+        .icon{
+            width: 20vw;
+            height: 20vw;
+            border: solid 1px lightgray;border-radius: 2px;
+        }
+
+        .shop-name{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+
+        
+
+        .shop-name h3{
+            margin: 0;
+            font-size: 4vw;
+        }
+        
+        .brand{
+            background-color: #ffe339;
+            font-size: 3vw;
+            padding: 1px 2px;
+            color: #6f3f15;
+            border-radius: 2px;
+            position: relative;
+            top: -2px;
+        }
+
+        .mark{
+            font-size: 3vw;
+            border: solid 1px #999;
+            color: #999;
+            border-radius: 2px;
+        }   
+
+        .star{
+            font-size: 3vw;
+            display: flex;
+            justify-content: space-between;
+            color: #666;
+        }
+
+        .star p{
+            margin: 0;
+
+        }
+
+        .fengniao{
+            background-color: #0af;
+            color: white;
+            padding: 0px 2px;
+            border-radius: 2px;
+            font-size: 2.7vw;
+        }
+        .fengniao:before{
+            content: "蜂鸟转送";
+        }
+
+        #bg{
+            background-image: url(icon.png);
+            width: 200px;
+            height: 200px;
+        }
+        #box{
+            width: 100px;
+            height: 100px;
+            /* 设置透明色 */
+            /* rgba,a表示alpha，透明度，范围0-1,0表示完全透明，1表示完全不透明，0.5半透明 */
+            /* background-color: rgba(0, 0, 0, 0.5); */
+
+            background-color: red;
+
+            /* 设置元素透明度，和透明背景色相比，设置元素透明会使本身的内容也透明 */
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="cell clear-fix">
+        <div class="img-box">
+            <img src="icon.png" class="icon">
+        </div>
+        <div class="content">
+            <div class="shop-name">
+                <h3>
+                    <span class="brand">品牌</span>
+                    方中山胡辣汤（航海东路店）
+                </h3>
+                <div>
+                    <span class="mark">票</span>
+                </div>
+            </div>
+            <div class="star">
+                <p>
+                    <span class="rate">星星星星星</span>
+                    &nbsp;
+                    <span class="score">4.6</span>
+                    &nbsp;
+                    <span class="xiaoliang">月售666单</span>
+                </p>
+                <span class="fengniao"></span>
+            </div>
+        </div>
+    </div>
+
+    <div id="bg">
+        <div id="box">内容是否也透明</div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表单元素</title>
+    <style lang="">
+        #sign-box *{
+            vertical-align: top;
+        }
+
+        #sign{
+            resize: none;
+            width: 100%;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+
+
+
+    <!-- label标签，一般和input结合使用，对input起提示作用，for属性需要填写对应的input的id值，这样点击label就相当于点击了input -->
+    <label for="username">用户名：</label>
+    <!-- input,type为text时，表示输入框，是行内块元素,placeholder：占位符，内容为空时显示。autocomplete自动提示 -->
+    <input type="text" id="username" placeholder="请输入用户名" autocomplete="off">
+
+    <br>
+
+    <label for="psw">密&emsp;码：</label>
+    <input type="password" id="psw">
+
+    <br>
+
+    <p>性别：</p>
+    <!-- input,type=radio时，表示单选框，多个单选框的name设置一样时这些单选框为一组，同一组单选框只能选中一个 -->
+    <label for="male">男</label>
+    <input type="radio" id="male" name="gender">
+    <label for="female">女</label>
+    <input type="radio" id="female" name="gender">
+
+    <p>爱好：</p>
+    <!-- input,type=checkbox时，表示复选框。 -->
+    <label for="basketball">篮球</label>
+    <input type="checkbox" id="basketball">
+    <label for="music">音乐</label>
+    <input type="checkbox" id="music">
+    <label for="study">学习</label>
+    <input type="checkbox" id="study">
+
+    <br>
+
+    <!-- select,下拉列表，行内块元素，option，下拉列表中的某一项。 -->
+    <label for="major">专业：</label>
+    <select id="major">
+        <option>web前端</option>
+        <option>大数据</option>
+        <option>JAVA</option>
+        <option>UI</option>
+    </select>
+
+    <br>
+
+    <!-- 文本域，input只能输入一行内容，文本域中可以输入多行内容。 -->
+    <div id="sign-box">
+        <label for="sign">个性签名：</label>
+        <br>
+        <textarea id="sign"></textarea>
+    </div>
+
+
+    <!-- button，按钮标签，行内块 -->
+    <button>按钮</button>
+    
+    <!-- 
+        1,仿作真实网站首页。
+        2,小球弹跳动画。
+     -->
+
+</body>
+</html>
