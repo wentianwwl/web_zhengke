@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>浮动布局</title>
+        <style>
+            #stu-list{
+                background-color: lightcoral;
+                /* padding: 0; */
+                list-style: none;
+            }
+
+            .item{
+                background-color: lightgreen;
+                margin: 5px 5px;
+
+                /* float，让元素使用浮动布局，在浮动布局中，块元素不再单独占一行，而且宽度不再和父元素等宽，也进行左右排列。 */
+                /* 浮动布局分为左浮动和右浮动，区别是从左向右排列和从右向左排列 */
+                float: left;
+                padding: 4px 8px;
+                border-radius: 8px;
+
+                cursor: pointer;
+            }
+
+            .item:hover{
+                background-color: red;
+                color: white;
+            }
+
+            #d1{
+                /* 清除浮动 */
+                clear: both;
+            }
+
+            .clear-fix:after{
+                content: "";
+                display: block;
+                clear: both;
+            }
+        </style>
+    </head>
+    <body>
+        <ul id="stu-list" class="clear-fix">
+            <li class="item">HTML</li>
+            <li class="item">CSS</li>
+            <li class="item">JavaScript</li>
+            <li class="item">NodeJS</li>
+            <li class="item">HTML</li>
+            <li class="item">CSS</li>
+            <li class="item">JavaScript</li>
+            <li class="item">NodeJS</li>
+            <li class="item">HTML</li>
+            <li class="item">CSS</li>
+            <li class="item">JavaScript</li>
+            <li class="item">NodeJS</li>
+            <!-- 
+                浮动布局会影响本元素的后续元素，所使用浮动布局之后，一定要在最后一个浮动元素之后清除浮动，否则会造成父元素撑不开，后续元素排列错误等。
+             -->
+             <!-- 清除浮动的基本方式：在最后一个浮动元素之后添加一个空的div，给这个div设置样式clear:both -->
+             <!-- <div id="d1"></div> -->
+
+
+             <!-- 在不添加新元素的情况下清除浮动:为浮动元素的父元素添加一个class（一般使用clear-fix作为class名），为这个class添加后缀，后缀设置为block元素，并clear:both -->
+        </ul>
+
+        <h1>以上是H5要学习的功课</h1>
+
+    </body>
+</html>

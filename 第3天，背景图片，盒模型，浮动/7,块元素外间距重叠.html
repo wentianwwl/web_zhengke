@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>块元素外间距重叠</title>
+        <style>
+            body{
+                margin: 0;
+            }
+
+            .box{
+                height: 50px;
+            }
+
+            #d1{
+                background-color: red;
+                margin-bottom: 10px;
+            }
+
+            #d2{
+                background-color: green;
+                margin-top: 20px;
+            }
+
+            #container{
+                height: 300px;
+                background-color: blue;
+                margin-top: 10px;
+            }
+
+            #inner{
+                height: 100px;
+                background-color: cyan;
+                margin-top: 20px;
+            }
+
+        </style>
+    </head>
+    <body>
+
+        <!-- 两个块元素上下相邻时，外间距会产生重叠，如果两者外间距不同，则使用较大的那个值 -->
+
+        <div id="d1" class="box">
+
+        </div>
+        <div id="d2" class="box">
+
+        </div>
+
+        <!-- 两个嵌套关系的块元素，上下外间距也会重叠。 -->
+        <div id="container">
+            <div id="inner"></div>
+        </div>
+
+        <!-- 只有是两个块元素，而且是上下外间距才会产生重叠 -->
+
+    </body>
+</html>

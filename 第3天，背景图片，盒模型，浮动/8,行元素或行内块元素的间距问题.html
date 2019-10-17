@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>行元素或行内块的间距问题</title>
+        <style>
+            .txt{
+                background-color: lightblue;
+                margin: 0 -3px;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 为什么行元素和行内块元素之间会有小间隙？ -->
+        <!-- HTML代码在书写时为了保持美观，每个元素单独写一行，所以元素之间会有空格和回车，这些空格和回车在页面解析时会被解析为一个空格，间隙就是这个空格造成的 -->
+        <span class="txt">第一部分</span>
+        <span class="txt">第二部分</span>
+        <span class="txt">第三部分</span>
+        <!-- 解决方法 -->
+        <!-- 1，清除元素之间的回车和空格，例如将下一行的开始标签写在上一行 -->
+        <!-- 2，设置负margin抵消间距 -->
+
+        <!-- 如果HTML代码上线时要进行压缩，则使用第一种方法，不需要压缩则使用第二种方法 -->
+    </body>
+</html>

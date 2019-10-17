@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>背景图片</title>
+        <style>
+            body{
+                background-image: url(bg.jpg);
+
+                /* 背景图片固定，不随页面滚动 */
+                background-attachment: fixed;
+            }
+            #box1{
+                height: 300px;
+                width: 500px;
+                background-color: red;
+                /* 设置背景图片，url中填写图片的地址 */
+                background-image: url(timg.jpg);
+                /* 如果背景图片比元素尺寸小，则会重复显示铺满整个元素，如果背景图片比元素大，则会显示左上角的部分 */
+
+                /* 设置背景图片不重复显示 */
+                background-repeat: no-repeat;
+
+                /* 设置背景图片的位置，横向和纵向 */
+                /* background-position: 100px 20px; */
+
+                /* 背景图片位置可以设置具体值，也可以设置百分比 */
+                background-position: 50% 50%;
+
+                /* 设置横向和纵向的尺寸，如果不设置背景图片尺寸，那么默认为图片原始大小，如果只设置宽度，高度会等比例变化 */
+                /* background-size: 100px; */
+
+                /* 背景图片尺寸也可以设置百分比 */
+                /* background-size: 50% 100%; */
+
+                /* 背景图片尺寸有两个特殊值 */
+                /* contain，纵向铺满，横向等比例缩放 */
+                /* background-size: contain; */
+                /* cover，横向铺满，纵向等比例缩放 */
+                /* background-size: cover; */
+            }
+        </style>
+    </head>
+    <body>
+        <div id="box1">
+
+        </div>
+        <p>撑开页面</p>
+        <p>撑开页面</p>
+        <p>撑开页面</p>
+        <p>撑开页面</p>
+        <p>撑开页面</p>
+        <p>撑开页面</p>
+        <p>撑开页面</p>
+        <p>撑开页面</p>
+        <p>撑开页面</p>
+        <p>撑开页面</p>
+        <p>撑开页面</p>
+        <p>撑开页面</p>
+        <p>撑开页面</p>
+        <p>撑开页面</p>
+        <p>撑开页面</p>
+    </body>
+</html>

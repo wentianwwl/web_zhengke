@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>图片精灵</title>
+        <style>
+            .d1{
+                width: 75px;
+                height: 75px;
+                border: solid 1px black;
+            }
+        </style>
+
+        <!-- css可以单独写在一个css文件中，然后在html文件同通过link标签导入，导入的css文件中的样式就能在本页面中生效 -->
+        <link rel="stylesheet" href="icon.css">
+
+    </head>
+    <body>
+        <div class="d1 icon bell"></div>
+        <div class="d1 icon male-doctor"></div>
+    </body>
+
+
+    <!-- 使用图片精灵的好处 -->
+    <!-- 1，使用方便，只需要设置一个class属性即可显示某个特定的背景图 -->
+
+    <!-- 2，将多张小图片拼接成一张大图片之后，会减少本页面加载时的请求次数，提高页面的访问速度 -->
+
+</html>

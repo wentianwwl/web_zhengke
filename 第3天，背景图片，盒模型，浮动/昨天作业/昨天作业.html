@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>个人主页</title>
+        <meta charset="utf-8">
+        <style>
+            body{
+                margin: 0;
+                margin-bottom: 80px;
+                background-color: #eeeeee;
+            }
+            #banner{
+                height: 400px;
+                /*设置背景图片*/
+                background-image: url(bg.jpg);
+                background-position: 50% 50%;
+            }
+            #container{
+                width: 800px;
+                margin: 0 auto;
+            }
+
+            /*img标签如果不设置宽高，那么宽高等于所显示的图片的宽高，如果同时设置了宽和高，那么就等于设置的宽高，如果只设置了宽度，那么高度会随之等比例缩放，如果只设置了高度，宽度会等比例缩放*/
+            .pic{
+                /*宽度设置为100%，表示和父元素等宽*/
+                width: 100%;
+            }
+            .text{
+                text-indent: 2em;
+            }
+            h1{
+                text-align: center;
+            }
+            h4{
+                text-align: center;
+            }
+
+            #nav{
+                background-color: blue;
+                margin: 0;
+                height: 40px;
+                position: fixed;
+                left: 0;
+                top: 0;
+                width: 100%;
+            }
+
+            #nav li{
+                display: inline-block;
+                background-color: yellow;
+            }
+            #nav li a{
+                line-height: 40px;
+            }
+
+            #friends-box{
+                height: 300px;
+                border: solid 1px black;
+                background-image: url(daxue.png);
+                position: relative;
+            }
+
+            .friend{
+                position: absolute;
+            }
+
+            /* 实现一个元素在父元素中上下和左右都居中。
+            第一种方法，position:absolute+margin:auto+上下左右都设置0 */
+            #f5{
+                margin: auto;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                right: 0;
+            }
+
+            #f1{
+                left: 0;
+                top: 0;
+            }
+
+            #f2{
+                left: 0;
+                bottom: 0;
+            }
+
+            #f3{
+                right: 0;
+                top: 0;
+            }
+
+            #f4{
+                right: 0;
+                bottom: 0;
+            }
+            
+        </style>
+    </head>
+    <body>
+
+        <ul id="nav">
+            <li>
+                <a href="#c1">我的学校</a>
+            </li>
+            <li>
+                <a href="#c2">我的家乡</a>
+            </li>
+            <li>
+                <a href="#c3">我的同学</a>
+            </li>
+                
+        </ul>
+
+        <div id="banner"></div>
+
+        <div id="container">
+
+            <h1>孙化育</h1>
+            <h4>欢迎来到我的个人主页</h4>
+
+            <h2 id="c1">我的学校</h2>
+            <p class="text">中国人民解放军战略支援部队信息工程大学，是中国人民解放军战略支援部队直属的全国综合类高等军事院校，是全军重点建设的五所综合大学之一，是军队“2110工程”重点建设院校之一，正军级编制。中国人民解放军战略支援部队信息工程大学创建于1999年4月，先后由原解放军信息工程学院、解放军测绘学院、解放军电子技术学院和解放军外国语学院合并组建而成。</p>
+            <img class="pic" src="daxue.png">
+            <hr>
+
+            <h2 id="c2">我的家乡</h2>
+            <p class="text">中国人民解放军战略支援部队信息工程大学，是中国人民解放军战略支援部队直属的全国综合类高等军事院校，是全军重点建设的五所综合大学之一，是军队“2110工程”重点建设院校之一，正军级编制。中国人民解放军战略支援部队信息工程大学创建于1999年4月，先后由原解放军信息工程学院、解放军测绘学院、解放军电子技术学院和解放军外国语学院合并组建而成。</p>
+            <img class="pic" src="daxue.png">
+            <hr>
+
+            <h2 id="c3">我的同学</h2>
+            <p class="text">中国人民解放军战略支援部队信息工程大学，是中国人民解放军战略支援部队直属的全国综合类高等军事院校，是全军重点建设的五所综合大学之一，是军队“2110工程”重点建设院校之一，正军级编制。中国人民解放军战略支援部队信息工程大学创建于1999年4月，先后由原解放军信息工程学院、解放军测绘学院、解放军电子技术学院和解放军外国语学院合并组建而成。</p>
+            <div id="friends-box">
+                <img src="index1.png" alt="" class="friend" id="f1">
+                <img src="index2.png" alt="" class="friend" id="f2">
+                <img src="index3.png" alt="" class="friend" id="f3">
+                <img src="index4.png" alt="" class="friend" id="f4">
+                <img src="timg.jpg" alt="" class="friend" id="f5">
+            </div>
+            <hr>
+            
+        </div>
+        
+    </body>
+</html>

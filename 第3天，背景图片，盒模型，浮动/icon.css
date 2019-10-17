@@ -1,0 +1,13 @@
+.icon{
+    background-image: url(icons.jpg);
+    background-size: 700% 700%;
+}
+
+.bell{
+    /* 负值 负数表示。大图不动，div移动，也只能是向右、向下移动，只要记住这两个方向移动的像素都用负数表示就行了！  */
+    background-position: -100% -100%;
+}
+
+.male-doctor{
+    background-position: -200% -200%;
+}

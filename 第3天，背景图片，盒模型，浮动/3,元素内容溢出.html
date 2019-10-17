@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>元素内容溢出</title>
+        <style>
+            #box{
+                width: 200px;
+                height: 200px;
+                background-color: yellow;
+
+                /* 默认情况下，元素溢出的内容会在元素之外显示 */
+
+                /* overflow: hidden，溢出部分的内容不显示 */
+                /* overflow: hidden; */
+
+                /* scroll，溢出的部分滚动显示 */
+                /* overflow: scroll; */
+                overflow-y: scroll;
+                
+            }
+            #d2{
+                width: 200px;
+                height: 50px;
+                background-color: red;
+                margin-top: 20px;
+
+                /* 溢出的文本使用省略号提示 */
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="box">
+            元      素中的内容宽    度或高度超过元素本身的宽高时就会造成内容溢出。元素中的内容宽度或高度超过元素本身的宽高时就会造成内容溢出。元素中的内容宽度或高度超过元素本身的宽高时就会造成内容溢出。元素中的内容宽度或高度超过元素本身的宽高时就会造成内容溢出。元素中的内容宽度或高度超过元素本身的宽高时就会造成内容溢出。
+        </div>
+
+        <div id="d2">
+            元素中的内容宽度或高度超过元素本身的宽高时就会造成内容溢出。元素中的内容宽度或高度超过
+        </div>
+    </body>
+</html>

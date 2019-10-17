@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>盒模型</title>
+        <style>
+            #d1{
+                width: 100px;
+                height: 100px;
+                border: solid 20px red;
+                background-color: yellow;
+                padding: 20px;
+                margin: 20px;
+
+                /* 背景裁剪，背景只显示到内容部分 */
+                background-clip: content-box;
+
+                /* 一个元素，从里到外，分为内容盒，内间距盒，边框盒，外间距盒 */
+
+
+                /* 设置一个元素的宽高，默认设置的是内容盒的宽高。 */
+
+                /* boxsizing，元素宽高的计算方式，默认为content-box,以内容盒计算。border-box表示以边框盒计算，包含内容、内间距和边框一共100px */
+                box-sizing: border-box;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="d1">
+
+        </div>
+    </body>
+</html>
