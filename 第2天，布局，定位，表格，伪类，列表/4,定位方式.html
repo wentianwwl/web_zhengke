@@ -1,0 +1,134 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>定位方式</title>
+    <style>
+        /* body{
+                position: relative;
+            } */
+        .pink {
+            height: 100px;
+            width: 200px;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+        }
+
+        #d1 {
+            background-color: red;
+        }
+
+        #d2 {
+            background-color: green;
+            /* position样式，表示元素的定位方式 */
+            /* static表示静态定位，只参与流式布局，不能设置位置，
+                一个元素默认的定位方式就是static */
+            /* position: static; */
+
+            /* relative，相对定位，相对定位的元素，参与流式布局，
+                而且可以通过top,left,bottom,right样式设置位置。
+                相对于本身在流文档中原有的位置进行定位。 */
+            position: relative;
+            left: 20px;
+            top: 20px;
+        }
+
+        #d3 {
+            background-color: blue;
+        }
+
+        #container {
+            background-color: #dddddd;
+            margin-top: 20px;
+            /* height: 150px; */
+            width: 500px;
+            position: relative;
+        }
+
+        #d4 {
+            background-color: pink;
+
+            /* absolute:绝对定位，绝对定位的元素会脱离文档流，
+            不参与流式布局，所以在它父元素的文档流中就没有它的位置。
+            绝对定位的元素也可以使用top,left等进行位置调整 */
+
+            /* absolute定位的元素，相对于离自己最近的position为非static的上层元素进行定位。 */
+
+            /* absolute定位的元素，先查看自己父元素的定位是否为static，
+            如果不是，则相对于父元素定位，如果是，则查看父元素的父元素是否为static，
+            一直找到根元素（html）为止。 */
+
+            /* 所以，如果想要让一个元素相对于自己的父元素进行定位，
+            那么将父元素的position设置为非static即可（一般设置为relative，relative不会破坏父元素原有的流式布局） */
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        #d5 {
+            background-color: purple;
+        }
+
+        #d6 {
+            width: 300px;
+            height: 150px;
+            background-color: cyan;
+
+            /* fixed，固定定位。固定定位的元素会脱离文档流，不参与流式布局。也可以通过left,top等设置位置 。
+            fixed定位的元素总是相对于根元素进行定位，而且不随页面滚动*/
+            position: fixed;
+            left: 0;
+            top: 20px;
+        }
+
+        /* 
+                staitc:静态定位，元素默认的定位方式。
+                relative:相对定位，当需要对某个元素在原有的位置上进行微调时使用。
+                absolute:绝对定位，当需要让一个元素相对于自己的父元素或其他上层元素定位时使用
+                fixed:当希望某个元素不随页面滚动时使用
+             */
+    </style>
+</head>
+
+<body>
+    <div id="d1" class="box"></div>
+    <div id="d2" class="box">你好</div>
+    <div id="d3" class="box"></div>
+
+    <div id="container">
+        <div class="pink" id="d4"></div>
+        <div class="box" id="d5"></div>
+        <div id="d6"></div>
+    </div>
+
+    <p>撑开页面</p>
+    <p>撑开页面</p>
+    <p>撑开页面</p>
+    <p>撑开页面</p>
+    <p>撑开页面</p>
+    <p>撑开页面</p>
+    <p>撑开页面</p>
+    <p>撑开页面</p>
+    <p>撑开页面</p>
+    <p>撑开页面</p>
+    <p>撑开页面</p>
+    <p>撑开页面</p>
+    <p>撑开页面</p>
+    <p>撑开页面</p>
+    <p>撑开页面</p>
+    <p>撑开页面</p>
+    <p>撑开页面</p>
+    <p>撑开页面</p>
+    <p>撑开页面</p>
+    <p>撑开页面</p>
+    <p>撑开页面</p>
+    <p>撑开页面</p>
+
+
+
+</body>
+
+</html>

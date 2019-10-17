@@ -1,0 +1,102 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>行元素，块元素，行内块</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        #d1 {
+            background-color: red;
+            height: 50px;
+            width: 100px;
+            margin: 0 auto;
+        }
+
+        #d2 {
+            background-color: blue;
+            height: 100px;
+            width: 100px;
+        }
+
+        .s {
+            background-color: yellow;
+            /* height: 100px;
+                width: 500px; */
+
+        }
+
+        #i1 {
+            width: 100px;
+            height: 260px;
+        }
+
+        .d3 {
+            background-color: green;
+            margin: 10px 0;
+            height: 50px;
+            /* display，设置元素的布局方式，常用的三个值：block块元素，inline行元素，inline-block，行内块元素。 */
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- HTML元素按照布局方式，主要可以分为行元素，块元素，行内块元素 -->
+
+
+    <!-- 块元素的代表:div,h1-h6,p,hr -->
+    <!-- 块元素的特点：可以设置宽高，不设置宽高时，宽度和父元素等宽，高度取决于自身内容。
+            无论是否设置宽度，块元素总是独占一行
+         -->
+    <!-- 块元素，可以通过margin 0 auto实现在父元素中居中 -->
+    <div id="d1">第1块</div>
+    <div id="d2"></div>
+
+
+    <!-- 行元素代表：b,del,span,a -->
+    <!-- 行元素的特点：不能设置宽高，宽高只取决于自身内容。
+            多个行元素之间会左右排列，如果右侧空间不够则会自动换行 
+        -->
+    <span class="s">第一个span</span>
+    <span class="s">第二个span</span>
+    <span class="s">第一个span</span>
+    <span class="s">第二个span</span>
+    <span class="s">第一个span</span>
+    <span class="s">第二个span</span>
+    <span class="s">第一个span</span>
+    <span class="s">第二个span</span>
+    <span class="s">第一个span</span>
+    <span class="s">第二个span</span>
+    <span class="s">第一个span</span>
+    <span class="s">第二个span</span>
+    <span class="s">第一个span</span>
+    <span class="s">第二个span</span>
+
+    <div></div>
+
+    <!-- 行内块元素代表：img,button,input -->
+    <!-- 行内块元素特点：可以设置宽高，如果不设置宽高，则宽高取决于自身内容。
+        行内块不独占一行，也是从左往右排列，右侧空间不够则换行 -->
+
+    <!-- img标签的特殊之处：如果不设置宽高，则宽高取决于所显示的图片的宽高，
+        如果只设置宽度，则高度等比例缩放，只设置高度，则宽度等比例缩放。
+        如果宽高都设置，则按照设置的宽高显示，但是这样会导致图片变形。 -->
+    <img id="i1" src="timg.jpg">
+    <img id="i2" src="timg.jpg">
+
+    <!-- 行元素和行内块元素，需要在父元素中居中时，需要设置父元素的文本对齐方式为center -->
+
+    <br>
+
+    <!-- 行元素，块元素，行内块之间可以相互切换 -->
+    <!-- 所以平时我们说div是块元素，指的是div的display属性默认为block -->
+
+    <div class="d3">行元素的div</div>
+    <div class="d3">行元素的div</div>
+
+</body>
+
+</html>

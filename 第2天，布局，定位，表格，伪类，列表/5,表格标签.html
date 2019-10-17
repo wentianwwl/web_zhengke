@@ -1,0 +1,107 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>表格</title>
+        <style>
+
+            
+            #t2{
+                margin-top: 20px;
+
+                /* border，设置元素边框，分别可以设置边框样式，粗细，颜色 */
+                /* solid:实线。dashed:虚线。dotted：点状线。double：双线。groove：3d样式*/
+                border: solid 1px red;
+
+                /* 设置边框折叠，td与td或td与table的边框会重叠在一起 */
+                /* 让表格看起来不再像双边框一样 */
+                border-collapse: collapse;
+
+                text-align: center;
+            }
+
+
+            #t2 td{
+                border: solid 1px red;
+
+                width: 100px;
+                height: 50px;
+                
+                /* 对于元素的样式，不主动设置时都会使用默认值，不同元素的不同样式都有不同的默认值。 */
+
+                /* 在css样式中，有一部分样式默认是是inherit，继承的，表示继承父元素这个样式的值，大部分和文本相关的样式，默认值都是inherit，例如text-align，默认值就是inherit */
+
+                /* td的text-align样式，默认值是inherit，所以不设置时，会继承他的父元素的text-align样式 */
+            }
+        </style>
+    </head>
+    <body>
+        
+        <!-- table，表格标签，块元素 -->
+        <table>
+            <!-- thead，表头，表的第一行需要放在表头中，和tbody基本一样，只是语义上的差别。 -->
+            <thead>
+                <!-- tr,一行 -->
+                <tr>
+                    <!-- th，表头行中的单元格，字体加粗，和td只是语义上的差别， -->
+                    <th></th>
+                    <th>星期一</th>
+                    <th>星期二</th>
+                    <th>星期三</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <!-- td,每一行中的单元格 -->
+                    <td>第一节</td>
+                    <td>语文</td>
+                    <td>数学</td>
+                    <td>英语</td>
+                </tr>
+                <tr>
+                    <td>第二节</td>
+                    <td>物理</td>
+                    <td>化学</td>
+                    <td>生物</td>
+                </tr>
+                <tr>
+                    <td>第三节</td>
+                    <td>体育</td>
+                    <td>美术</td>
+                    <td>音乐</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 实际开发当中，thead和tbody都可以省略，table中直接放tr，tr中直接放td -->
+
+        <table id="t2">
+            <tr>
+                <td></td>
+                <td>星期一</td>
+                <td>星期二</td>
+                <td>星期三</td>
+            </tr>
+            <tr>
+                <td>第一节</td>
+                <!-- rowspan用于设置td占多少行 -->
+                <td rowspan="2">语文</td>
+                <td>数学</td>
+                <td>英语</td>
+            </tr>
+            <tr>
+                <td>第二节</td>
+                <td>化学</td>
+                <td>生物</td>
+            </tr>
+            <tr>
+                <td>第三节</td>
+                <!-- colspan，设置td占多少列 -->
+                <td colspan="3">体育</td>
+                
+            </tr>
+        </table>
+
+
+
+    </body>
+</html>

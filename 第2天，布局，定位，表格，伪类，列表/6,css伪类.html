@@ -1,0 +1,93 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>css伪类</title>
+        <style lang="">
+            #a1{
+                color: black;
+                text-decoration: none;
+            }
+
+            /* css伪类:当元素处于某种特殊情况下时，或者元素的某一部分所触发的类 */
+
+            /* 伪类格式： 选择器:为类名 */
+
+            /* hover,鼠标指针悬停在元素上时所触发的伪类 */
+            #a1:hover{
+                color: red;
+            }
+
+            /* 当元素获得焦点时触发 */
+            /* 只有可交互的元素才能获得焦点，同一页面中同一时间只有一个元素能获得焦点 */
+            #a1:focus{
+                color: blue;
+            }
+
+            /* 只能用于a标签，已访问过的a标签能够触发 */
+            #a1:visited{
+                color: grey;
+            }
+
+            /* 当元素被鼠标指针按下时触发，松开鼠标时消失 */
+            #btn:active{
+                width: 200px;
+            }
+
+            /* :before元素前缀，前缀中设置的内容会显示在元素的左边 */
+            .rmb:before{
+                /* 前缀内容 */
+                content: "￥";
+                /* 前缀中的内容可以单独设置样式 */
+                color: blue;
+            }
+
+            /* after，设置后缀 */
+            .rmb:after{
+                content: "元";
+                color: aqua;
+            }
+
+            #p1{
+                text-indent: 2em;
+            }
+
+            /* first-letter:选中元素中的第一个字 */
+            #p1:first-letter{
+                font-size: 30px;
+                color: red;
+            }
+
+            #p1:first-line{
+                font-family: 宋体;
+            }
+
+            
+
+        </style>
+    </head>
+    <body>
+        <a id="a1" href="http://www.weibo.com">新浪微博</a>
+        <input type="text">
+        <button id="btn">按钮</button>
+
+        <table>
+            <tr>
+                <td>基本工资</td>
+                <td class="rmb">5000</td>
+            </tr>
+            <tr>
+                <td>奖金</td>
+                <td class="rmb">2000</td>
+            </tr>
+            <tr>
+                <td>合计</td>
+                <td class="rmb">7000</td>
+            </tr>
+        </table>
+
+        <p id="p1">
+            尽管实现这种效果的方法非常多,但是我们的做法是:使用“提示”使用 span 元素,然后对这个 span 元素的父元素,即 p 元素应用 class,这样就可以对这个类的子元素 ...尽管实现这种效果的方法非常多,但是我们的做法是:使用“提示”使用 span 元素,然后对这个 span 元素的父元素,即 p 元素应用 class,这样就可以对这个类的子元素 ...
+        </p>
+
+    </body>
+</html>

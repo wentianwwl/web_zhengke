@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        table td {
+            border: 1px solid red;
+            text-align: center;
+
+        }
+    </style>
+</head>
+
+<body>
+    <table id="t2">
+        <tr>
+            <td></td>
+            <td>星期一</td>
+            <td>星期二</td>
+            <td>星期三</td>
+        </tr>
+        <tr>
+            <td>第一节</td>
+            <!-- rowspan用于设置td占多少行 -->
+            <td rowspan="2">语文</td>
+            <td>数学</td>
+            <td>英语</td>
+        </tr>
+        <tr>
+            <td>第二节</td>
+            <td>化学</td>
+            <td>生物</td>
+        </tr>
+        <tr>
+            <td>第三节</td>
+            <!-- colspan，设置td占多少列 -->
+            <td colspan="3">体育</td>
+
+        </tr>
+    </table>
+</body>
+
+</html>
