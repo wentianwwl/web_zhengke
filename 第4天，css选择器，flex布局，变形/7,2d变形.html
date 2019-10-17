@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>2d变形</title>
+    <style>
+        #d1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+
+        }
+
+        #d1:hover{
+            /* transform：设置变形 */
+
+            /* rotate，表示旋转，deg表示角度。30deg顺时针转30度，-30deg逆时针转30度*/
+            transform: rotate(30deg); 
+
+            /* transform-origin，设置变形原点，进行变形时，以这个点为基准点。默认为50% 50% */
+            transform-origin: 100% 0%;
+        }
+
+        #d2{
+            width: 100px;
+            height: 100px;
+            background-color: green;
+        }
+
+        #d2:hover{
+            /* translate，平移变形，两个参数分别为横向偏移量和纵向偏移量 */
+            /* 偏移量也可以是百分比，表示自身尺寸的百分之多少 */
+            transform: translate(50%,20px);
+        }
+
+        #d3{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            
+            transition: all 0.7s;
+        }
+
+        #d3:hover{
+            /* scale，缩放变形，两个参数分别表示横向缩放量和纵向缩放量，小于1表示缩小，大于1表示放大（缩放之后是原尺寸的多少倍） */
+            /* 变形会使元素中的内容也变形 */
+            transform: scale(1.5,1.5);
+            transform-origin: 0% 0%;
+        }
+
+        #s1{
+            width: 200px;
+            height: 200px;
+            border: solid 1px black;
+            position: relative;
+        }
+        /* 第3中实现上下左右都居中的方式：相对父元素绝对定位，left:50%,top:50% , transform(-50%,-50%) */
+        #d4{
+            width: 50px;
+            height: 50px;
+            border: solid 1px red;
+
+            position: absolute;
+
+            left: 50%;
+            top: 50%;
+
+            transform: translate(-50%,-50%);
+        }
+    </style>
+</head>
+<body>
+    <div id="d1"></div>
+
+    <div id="d2"></div>
+
+    <div id="d3">缩放变形</div>
+
+
+    <section id="s1">
+        <div id="d4"></div>
+    </section>
+</body>
+</html>

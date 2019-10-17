@@ -1,0 +1,146 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>css选择器大全</title>
+        <style>
+            /* 标签名选择器,选择页面中所有的p标签 */
+            p{
+                font-size: 20px;
+            }
+
+            /* #first,id选择器，选择页面中id值为first的元素 */
+            #first{
+                color: blue;
+            }
+
+            /* .line,class选择器，选择页面中所有class属性包含line的元素 */
+            .line{
+                background-color: yellow;
+            }
+
+            /* 多个选择器之间连写，表示并且，同时满足所有的选择器 */
+            #first.line{
+                text-align: center;
+            }
+
+            /* 多个选择器之间用,隔开，表示符合第一个选择器的元素或符合第二个选择器的元素*/
+            #first,#second{
+                font-weight: 700;
+            }
+
+            /* #box中的p标签， */
+            #box p{
+                color: green;
+            }
+
+            /* 选择#box元素中的子元素中的p标签（子元素的子元素不算） */
+            #box>p{
+                background-color: lightgoldenrodyellow;
+            }
+
+            /* [abc]，属性选择器，选择页面中所有拥有abc属性的元素 */
+            [abc]{
+                font-family: 宋体;
+            }
+
+            /* 选择页面中拥有abc属性的p标签 */
+            /* p[abc] */
+
+            /* 选择页面中pro属性是val的所有元素 */
+            [pro=val]{
+                color: purple;
+            }
+
+            #t1,#t1 td{
+                border: solid 1px black;
+            }
+
+            /* 每个元素中的第一个td标签 */
+            td:nth-of-type(1){
+                background-color: red;
+            }
+
+            /* 每个元素中倒数第一个td标签 */
+            td:nth-last-of-type(1){
+                background-color: lightgreen;
+            }
+
+            /* 2n表示所有第欧数个，2n+1表示所有的奇数个td */
+            td:nth-of-type(2n+1){
+                font-weight: 700;
+            }
+
+            /* n+3,从第三个开始，后面所有td */
+            td:nth-of-type(n+3){
+                color: green;
+            }
+
+            /* 前3个td */
+            td:nth-of-type(-n+3){
+                font-family: 隶书;
+            }
+
+            /* :empty，元素内容为空时触发 */
+            div:empty{
+                width: 100px;
+                height: 100px;
+                background-color: pink;
+            }
+
+            /* *,表示选中所有元素 */
+            *{
+                box-sizing: border-box;
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <p class="line" id="first">第1行</p>
+        <p class="line" id="second">第2行</p>
+        <p class="line">第3行</p>
+
+        <div id="box">
+            <p>第4行</p>
+            <p>第5行</p>
+            <div>
+                <p>第6行</p>
+            </div>
+        </div>
+
+        <div abc>HTML元素的属性分为两大类：通用属性和特有属性。id,class,style每个元素都有的属性是通用属性。src,href,colspan等某些标签所特有的叫做特有属性。出自之外，HTML允许自定义属性</div>
+
+
+        <div pro="val">元素的属性按照是否有属性值分为两类：有值的属性和无值的属性</div>
+
+        <div pro="123">123123</div>
+
+
+        <table id="t1">
+            <tr>
+                <td>第一行</td>
+                <td>第一行</td>
+                <td>第一行</td>
+                <td>第一行</td>
+                <td>第一行</td>
+            </tr>
+            <tr>
+                <td>第二行</td>
+                <td>第二行</td>
+                <td>第二行</td>
+                <td>第二行</td>
+                <td>第二行</td>
+            </tr>
+            <tr>
+                <td>第三行</td>
+                <td>第三行</td>
+                <td>第三行</td>
+                <td>第三行</td>
+                <td>第三行</td>
+            </tr>
+        </table>
+
+        <div></div>
+
+    </body>
+</html>

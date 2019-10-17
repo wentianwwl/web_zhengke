@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>css选择器优先级</title>
+        <style>
+
+            p{
+                color: purple !important;
+            }
+
+            #green{
+                color: green;
+            }
+
+            .blue{
+                color: blue;
+            }
+
+            p{
+                color: red;
+            }
+            /* css选择器优先级顺序 */
+            /* 
+                !important>行内样式>id选择器>class选择器>标签名选择器
+             */
+
+            
+            /* 如果多个选择器优先级一样，那么按照书写顺序取最后一个选择器中的样式 */
+            div{
+                color: blue;
+            }
+            div{
+                color: red;
+            }
+
+
+            /* 多个选择器连写时，优先级是这些选择器优先级(权值)之和 */
+            /* 
+                标签名选择器：1
+                class选择器：10
+                id选择器：100
+                行内样式:1000
+                !important:10000
+             */
+
+            /* 1+100=101 */
+            h1#t1{
+                color: red;
+            }
+            /* 1+100+10 = 111 */
+            h1#t1.title{
+                color: green;
+            }
+
+            /* 100 */
+            #t1{
+                color: blue;
+            }
+
+        </style>
+    </head>
+    <body>
+
+        <p 
+            id="green" 
+            class="blue"
+            style="color:grey"
+        >最后显示什么颜色</p>
+
+        <div>如果多个选择器优先级一样，那么按照书写顺序取最后一个选择器中的样式</div>
+
+
+        <h1 id="t1" class="title"></h1>
+
+    </body>
+
+</html>

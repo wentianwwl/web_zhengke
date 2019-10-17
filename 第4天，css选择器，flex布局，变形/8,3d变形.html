@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>3d变形</title>
+    <style lang="">
+
+        body{
+            /* 视野距离，设置之后才能看出3D变形效果 */
+            perspective: 500px;
+        }
+
+        .box{
+            width: 100px;
+            height: 100px;
+            margin: 20px auto;
+            transition: all 0.7s;
+        }
+
+        #d1{
+            background-color: red;
+            transform-origin: 0% 50%;
+        }
+
+        #d1:hover{
+            /* rotateY，沿Y轴旋转 */
+            transform: rotateY(-180deg);
+        }
+
+        #d2{
+            background-color: blue;
+            /* transform: translateZ(-100px); */
+            
+        }
+        #d2:hover{
+            transform: rotateX(360deg) translateZ(-200px) ;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="d1" class="box">
+        3d变形效果
+    </div>
+
+    <div id="d2" class="box">
+
+    </div>
+
+</body>
+</html>
+
+<!-- 作业：
+    1，饿了么官网单个店家cell
+    2，携程网单个景点cell
+ -->

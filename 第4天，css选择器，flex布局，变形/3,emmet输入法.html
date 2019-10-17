@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>emmet输入法</title>
+    </head>
+    <body>
+        <!-- emmet输入法，使用快速输入HTML文本的格式，又叫zencoding -->
+
+        
+        标签名+tab，输入一个标签
+        div
+        <div></div>
+
+        标签名*n，连续输入n个标签
+        p*3
+        <p></p>
+        <p></p>
+        <p></p>
+
+        标签名.c1.c2.c3 ..... 输入包含n个class值的标签
+        h1.title.head
+        <h1 class="titile head"></h1>
+
+
+        标签名#xxx   输入一个id属性为xxx的标签
+        div#box
+        <div id="box"></div>
+
+
+        当标签名是div时，一般可以不写
+        #box
+        <div id="box"></div>
+
+        
+        标签名[pro]，输入一个拥有pro属性的标签
+        div[pro]
+        <div pro=""></div>
+
+
+        标签名[p1=v1 p2=v2 .....] 输入一个p1属性为v1,p2属性为v2的标签
+        div[p1=v1 p2=v2]
+        <div p1="v1" p2="v2"></div>
+
+        
+        标签名{内容。。。。。}  输入一个指定内容的标签
+        div{这里是内容}
+        <div>这里是内容</div>
+
+        
+        标签名>子标签名  输入父标签和子标签
+        ul>li*3
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+
+
+        在输入多个标签时，可以用$表示序号
+        ul>li{第$行}*3
+        <ul>
+            <li>第1行</li>
+            <li>第2行</li>
+            <li>第3行</li>
+        </ul>
+
+        img[src=$.jpg]*3
+
+        一个table,id为t1,class有一个red，3行，4列，每个td都有一个rowspan属性为2,在td中，标明第几列
+
+        table#t1.red>tr*3>td[rowspan=2]{第$列}*4
+
+
+    </body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>flex实现定宽居中</title>
+    <style>
+        #s1{
+            border: solid 1px red;
+            height: 100px;
+
+            display: flex;
+        }
+
+        .box{
+            border: solid 1px blue;
+            flex-basis: 200px;
+        }
+
+        #d1{
+            /* flex-grow:当flex布局的父元素布局方向上的空间大于所有子元素的长度时，额外的长度分配给这个子元素多少（按比例分配），默认为0 */
+            flex-grow: 0;
+            flex-shrink: 1;
+        }
+
+        #d2{
+            flex-grow: 1;
+
+            /* flex-shrink:当flex的父元素布局方向上的长度不足子元素长度只和时，让哪些子元素变小（按比例分配，默认为1）。 */
+            flex-shrink: 0;
+        }
+
+        #d3{
+            flex-grow: 0;
+            flex-shrink: 1;
+        }
+
+        #s2{
+            margin-top: 20px;
+            height: 100px;
+            border: solid 1px blue;
+            display: flex;
+        }
+
+        .box2{
+            border: solid 1px green;
+        }
+
+        #d4{
+            flex-grow: 1;
+            flex-shrink: 1;
+        }
+        #d5{
+            flex-grow: 0;
+            flex-shrink: 0;
+            width: 600px;
+        }
+        #d6{
+            flex-grow: 1;
+            flex-shrink: 1;
+        }
+
+    </style>
+</head>
+<body>
+    <section id="s1">
+        <div id="d1" class="box"></div>
+        <div id="d2" class="box"></div>
+        <div id="d3" class="box"></div>
+    </section>
+
+    <section id="s2">
+        <div id="d4" class="box2"></div>
+        <div id="d5" class="box2"></div>
+        <div id="d6" class="box2"></div>
+    </section>
+</body>
+</html>
