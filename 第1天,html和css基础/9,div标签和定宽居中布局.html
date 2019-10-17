@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>div和定宽居中</title>
+        <style>
+            
+            #main{
+                background-color: bisque;
+
+                /* width设置宽度 */
+                width: 600px;
+
+                /* 设置高度 */
+                /* height: 600px; */
+
+                /* -------------- */
+
+                /* margin,设置外间距：本元素距离相邻的元素的距离，或者距离父元素边界的距离 */
+
+                /* 可以单独设置某一边的外间距 */
+                /* margin-left: 30px;
+                margin-top: 30px; */
+
+                /* margin可以设置4个方向的外间距，只写一个值时表示4个方向的外间距。写两个值时表示上下的和左右的外间距。设置4个值时，分别表示上，右，下，左的外间距 */
+                /* margin: 50px 100px 150px 200px; */
+
+                margin: 0 auto;
+            }
+            body{
+                /* body元素，自带一个8像素的外间距，不想要的话要主动设置为0 */
+                margin: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- div,division,用于将页面划分成多个区域 -->
+        <!-- div元素当不设置宽高时，宽度和父元素等宽，高度取决于自身内容 -->
+        <div id="main">
+            div标签
+            <br>
+            div标签
+            <br>
+            <br>
+            div标签
+        </div>
+
+
+    </body>
+</html>

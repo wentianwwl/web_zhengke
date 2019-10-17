@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>css基本选择器</title>
+        <style>
+            /* 标签名选择器 xxx，选择本页面中所有名字为xxx的标签 */
+            p{
+                color: red;
+            }
+
+            /* class选择器 .xxx ，选择本页面中所有class属性中包含xxx的元素*/
+            .underline{
+                text-decoration: underline;
+            }
+
+            .small{
+                font-size: 10px;
+            }
+
+            /* id选择器 #xxx ，选择页面中id值为xxx的元素 */
+            #delete{
+                text-decoration: line-through;
+            }
+
+            /* 选择页面中id值为main，class属性中包含up的h1标签 */
+            h1#main.up{
+                font-size: 100px;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <h1 id="main" class="up">111111</h1>
+        <h1 class="underline">标题</h1>
+        <p class="underline">p1</p>
+        <!-- class属性可以有多个值，多个值之间用空格隔开 -->
+        <p class="underline small">p2</p>
+        <p class="small">p3</p>
+
+        <!-- id属性，是元素的唯一标识符，只能有一个值，且同一页面中不能有两个元素使用相同的id -->
+        <p id="delete">第4个p标签</p>
+
+        <!-- 如果需要单独给某个元素设置样式，使用id选择器，如果给多个元素批量设置样式，使用class选择器，标签名选择器很少用 -->
+
+
+    </body>
+</html>

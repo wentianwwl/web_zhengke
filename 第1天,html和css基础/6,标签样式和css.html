@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>标签样式和css</title>
+        <!-- style标签中的内容必须是css样式 -->
+        <style>
+            /* 
+                css格式:
+                选择器{
+                    样式名1:样式值1;
+                    样式名2:样式值2;
+                    ......
+                }
+                以上整体为一条css规则。
+                一个样式表中可以有n条规则
+             */
+             /* 选择器表示本条规则中的样式是为页面中哪些元素添加的(选择哪些元素) */
+            h3{
+                color: blue;
+                /* px表示像素，长度单位 */
+                font-size: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 所有可视的元素都可以通过style属性添加样式，通过这种方式添加的样式叫做行内样式（内联样式） -->
+        <p style="color:red;font-size:20px">行内样式</p>
+
+
+        <!-- 使用行内样式有很多限制，不适合为大量元素添加样式，所以很少使用。设置样式更方便的方式是使用
+        CSS：层叠样式表 -->
+        
+        <h3>CSS:cascading style sheet</h3>
+        <h3>CSS:cascading style sheet</h3>
+        <h3>CSS:cascading style sheet</h3>
+
+
+    </body>
+</html>
