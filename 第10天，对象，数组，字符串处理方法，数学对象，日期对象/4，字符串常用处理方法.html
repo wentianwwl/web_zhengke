@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    
+    // 字符串长度。
+    //通过length属性，可以获得字符串的长度（字符串中字符的个数）
+    var str1 = "abcdefg";
+    console.log(str1.length);
+
+    //---------------------------------------------
+
+    //获得字符串中第n个字符(从左开始，从0开始)
+    //第一种方法，使用类似数组的访问方法[n]，它获得的还是一个字符串，字符串中只有一个字。
+    console.log(str1[3]);
+
+    // 第二种方法，使用charAt方法。
+    console.log(str1.charAt(3));
+
+    //---------------------------------------------
+    var str2 = "abCD";
+    // console.log(str2.toUpperCase());
+    // 将字符串中的字母转为大写。
+    var str3 = str2.toUpperCase();
+    console.log(str2);
+    //转小写
+    console.log(str2.toLowerCase());
+    //-------------------------------------------
+
+    var str4 = "0123456789";
+
+    // substr方法，截取子字符串，第一个参数表示从第几个位置开始截，第二个参数表示截多长。如果第二个参数不写则截取到最后一个字符。
+    var str5 = str4.substr(3,4);
+    console.log(str5);
+
+    // substring方法，截取子字符串，第一个参数也是表示从第几个字开始截，第二个参数表示截取到第几个(不含)。
+    var str6 = str4.substring(3,7);
+    console.log(str6);
+
+    //---------------------------------------------
+
+    var str7 = "欧阳锋";
+    // startsWith方法，判断一个字符串是否以另一个字符串开头。返回值是布尔值,是则返回true,不是返回false
+    console.log(str7.startsWith("欧阳"));
+    //endsWith方法，判断结尾。
+    console.log(str7.endsWith("锋"));  
+
+    //------------------------------------------
+    var str8 = "8";
+    //charCodeAt方法，获得一个字符串中第n个字的unicode编码。unicode编码中：
+    //字符0-9  对应  48-57
+    //字符A-Z  对应  65-90
+    //字符a-z  对应  97-122
+    // console.log(str8.charCodeAt(0));
+
+    //所以，要判断一个字符是不是数字字符，只需要判断他的unicode编码，是不是在48-57之间。
+
+    if(str8.charCodeAt(0)>=48&&str8.charCodeAt(0)<=57){
+        console.log("是一个数字");
+    }else{
+        console.log("不是一个数字");
+    }
+
+    //-------------------------------------------
+
+    var str9 = "When I was young I would listen to the radio";
+
+    // var str9 = "hello";
+    // split方法，按照某个字符或字符串，对另一个字符串进行分割，结果是一个数组，数组中是分割之后的若干个字符串。
+    var result = str9.split(" ");
+    console.log(result);
+
+    //------------------------------------------
+
+    var str10 = "abcjdsfoasfoabcwnfosfs";
+
+    //indexOf方法， 获得一个字符串在另一个字符串中第一次出现的位置，如果不包含，则返回-1，
+    var i = str10.indexOf("abc");
+    console.log(i);
+    
+
+
+</script>
+
+
+</html>

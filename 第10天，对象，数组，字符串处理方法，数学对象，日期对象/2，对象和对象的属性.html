@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    //对于一个简单的数据，可以使用基本数据类型记录，例如年龄，可以用数字类型，姓名，可以用字符串类型。
+
+    //而对于复杂的数据，例如一个人的信息，一个学校的信息，就要用对象(Object)来记录。
+
+    
+    //例如，要记录一个人的姓名，年龄，和是否已婚，可以创建一个对象，使用对象中的属性记录这3条数据。
+
+    // 使用{} 可以创建一个对象，一个对象中可以记录一些属性。这种创建对象的方法叫做字面量创建法。
+    //格式：
+    //{属性名1:属性值1,属性名2:属性值2........}
+    //属性名的命名规则和变量基本相同。属性的值可以是任何类型。
+    // 属性名又被称为键(key)，属性值可以简称为值(value)
+    var people = {
+        name:"sun",
+        age:30,
+        isMarried:true,
+    };
+    // 对象类型也可以通过console.log输出，但是对象类型的数据，一般使用console.dir输出，结果更详细。
+    // console.log(people);
+    console.dir(people);
+
+
+    //可以使用 对象.属性名 的方式访问一个对象的属性
+    // console.log(people.age);
+    var t = people.name;
+    console.log(t);
+    
+    //也可以通过 对象.属性名 的方式修改一个属性的值。
+    people.age = 50;
+    console.log(people);
+
+    //----------------------------------------------
+
+    //一个对象创建之后，可以添加新的属性。
+
+    // 创建了一个空对象（没有任何属性）。
+    var car = {};
+    console.log(car);
+
+    car.color = "白色";
+    car.brand = "奥迪";
+    console.log(car);
+
+
+    //----------------------------------------------
+
+    //对象的属性可以是任何类型，对象本身也是一种类型。所以，对象的某个属性也可以是对象。
+
+    // var student = {
+    //     name:"大头儿子",
+    //     age:6,
+    //     father:{
+    //         name:"小头爸爸",
+    //         age:35
+    //     }
+    // }
+
+    //以上对象还可以写为
+    // var student = {};
+    // student.name = "小头儿子";
+    // student.age = 6;
+    // var father = {};
+    // father.name = "小头爸爸";
+    // father.age = 35;
+    // student.father = father;
+
+    //还可以写为
+    var student = {};
+    student.name = "小头儿子";
+    student.age = 6;
+    student.father = {
+        name:"小头爸爸",
+        age:35
+    };
+
+    // 对象嵌套对象时，可以使用.连续获得属性。
+    console.log(student.father.name);
+
+    //------------------------------------------
+
+    // 对象的属性除了可以通过  .  访问之外，还可以通过[]进行访问。
+
+    var grade = {
+        classroom:402,
+        stuNum:41,
+        major:"web前端"
+    }
+
+    // console.log(grade.classroom);
+
+    // [] 中，需要写字符串值，或字符串变量，或字符串表达式。最终以字符串的值访问属性。
+    console.log(grade["classroom"]);
+
+    grade["teacher"] = "孙化育";
+
+    console.log(grade);
+
+</script>
+
+</html>

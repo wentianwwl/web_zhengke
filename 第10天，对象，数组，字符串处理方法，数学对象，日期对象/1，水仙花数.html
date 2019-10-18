@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+
+    // 判断一个数字是否是水仙花数
+    function isShuiXianHua(n){
+        var baiwei = Math.floor(n/100);
+        var shiwei = Math.floor(n%100/10);
+        var gewei = n%10;
+        var zimi = Math.pow(gewei,3)+Math.pow(shiwei,3)+Math.pow(baiwei,3);
+        return zimi == i;
+    }
+
+
+    for(var i = 100;i < 1000;i++){
+        if(isShuiXianHua(i)){
+            // console.log(i);
+        }
+    }
+
+    //----------------------------------------------
+
+    // 判断一个数字有几位（整数位）
+    function lengthOfNumber(n){
+        var i = 0;
+        var temp = Math.pow(10,i);
+        while(n/temp>1){
+            i++;
+            temp = Math.pow(10,i);
+        }
+        return i;
+    }
+    
+    // 判断一个数字是否是自幂数。
+
+    function isZiMiShu(n){
+        //先获得它的长度（位数）
+        var length = lengthOfNumber(n);
+        var sum = 0;
+        // 通过for循环计算每一位上的length次方。
+
+        for(var i = 0;i<length;i++){
+            var currentPosition = n%Math.pow(10,i+1)/Math.pow(10,i);
+            currentPosition = Math.floor(currentPosition);
+            sum+=Math.pow(currentPosition,length);
+        }
+
+        return sum == n;
+    }
+
+    for(var i = 1;i<=100000000;i++){
+        if(isZiMiShu(i)){
+            console.log(i);
+        }
+    }
+
+
+    //用for循环获得一个数字上每一位的数字是几
+
+    var num = 564731;
+    var len = lengthOfNumber(num);
+
+    // 通过for循环，遍历每一位，从0开始，0表示个位，1表示十位。。。。。。
+    for(var i = 0;i<length;i++){
+        //要获得数字a的第n位数字，先用a余上10的n+1次方，然后再除以10的n次方，最后取整。
+        //例如，564731，要获得百位(第2位)上的7，先用//564731%(10**(2+1)) = 564731%1000 = 731,然后
+        //731/10**2 = 7.31 。最后取整 ,得7.
+    }
+    
+    
+
+
+</script>
+
+</html>

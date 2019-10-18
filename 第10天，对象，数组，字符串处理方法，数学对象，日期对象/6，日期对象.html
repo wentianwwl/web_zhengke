@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+
+    //日期对象，不能字面量创建，只能通过new 创建。
+
+    //new Date(); 创建一个日期对象。这个对象中记录了当前时间点(这行代码运行时的时间点)。
+    var now = new Date();
+
+    // console.log(now);
+
+    //获得时间对象中的年份。
+    var y = now.getFullYear();
+    console.log(y);
+
+    //获得时间中的月份(从0开始)
+    var month = now.getMonth();
+    console.log(month);
+
+    //获得时间对象中的日期
+    var d = now.getDate();
+    console.log(d);
+
+    //获得时间对象中的小时数（24小时制）
+    var h = now.getHours();
+    console.log(h);
+
+    //获得分钟数
+    var minute = now.getMinutes();
+    console.log(minute);
+
+    //获得秒数
+    var s = now.getSeconds();
+    console.log(s);
+
+    // 获得时间对象的星期数，星期天是头一天，从0开始。
+    // 星期天是0，星期一是1，........
+    var day = now.getDay();
+    console.log(day);
+
+
+</script>
+
+</html>

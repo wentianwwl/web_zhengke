@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+
+    //对于类型相同，又属于同一个集体中的多个数据（例如一个班的学生名单），通过多个变量记录显然不合适，需要通过 数组 (array) 记录。
+
+    // 通过[] 创建一个数组（字面量、直接量创建法）。
+    // 格式：
+    //[值1，值2，......]。值与值之间以,隔开。
+    // 数组中的数据可以是任何类型。数组本身也是一种类型。
+    // 数组中的数据是有序的。
+    var students = ["Lilei","hanmeimei","lucy","lili","jim"];
+
+    //-----------------------------------------
+    //通过属性可以访问对象中数据的值。
+    //而数组中的数据，需要通过 索引（编号，第几个） 访问。
+
+    // 通过  数组[索引]  的形式访问数组中的某个数据，索引从0开始。 []中的索引，可以是数字值，或数字变量，或数字表达式。
+    console.log(students[0]);
+
+    // 也可以通过索引修改数组中的内容。
+    students[0] = "lileilei";
+    console.log(students);
+    
+    // 如果访问了数组长度以外的索引，会造成数组索引越界。要尽量避免这种情况发生。
+    console.log(students[7]);
+
+    //----------------------------------------
+
+    // 数组本身也是一种特殊的对象，也有自己的属性。
+
+    var arr1 = [34,65,12,87,99,66,33];
+    // 数组的length属性，表示数组的长度，也就是数组中元素的个数。length属性不能修改，否则会出错。
+    console.log(arr1.length);
+
+    // 一个数组长度为n,那么最大索引是n-1
+    console.log(arr1[arr1.length-1]);
+
+
+    //------------------------------------------
+
+    //利用for循环可以遍历一个数组。
+    //遍历：依次处理数组中的每个元素。
+
+    console.log("------------------------");
+
+    for(var i = 0;i<arr1.length;i++){
+        // console.log(arr1[i]);
+        if(arr1[i]%2==0){
+            console.log(arr1[i]);
+        }
+    }
+
+    
+
+
+</script>
+
+
+</html>
