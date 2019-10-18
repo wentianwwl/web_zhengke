@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>bootstrap基本配置</title>
+
+    <!-- 使用bootstrap至少要导入3个文件，一个css文件和两个js文件 -->
+
+    <!-- 导入bootstrap.css -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+
+    <style lang="">
+        /* table{
+            width: 600px !important;
+        }
+        td{
+            width: 200px !important;
+        } */
+    </style>
+
+</head>
+<body>
+    <main class="container">
+        <p class="lead bg-warning">bootstrap是一套功能强大的前端样式框架</p>
+
+        <p class="text-center">在bootstrap中可以直接使用现成的class使文本居中 bootstrap</p>
+    
+        <p class="text-uppercase">HelloWorld</p>
+        <p class="text-lowercase">HelloWorld</p>
+    
+        <ul class="list-inline">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>javascript</li>
+        </ul>
+    
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>周一</th>
+                        <th>周二</th>
+                        <th>周三</th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td class="success">语文</td>
+                    <td class="info">数学</td>
+                    <td>英语</td>
+                </tr>
+                <tr>
+                    <td>物理物理物理物理物理物理</td>
+                    <td>化学化学化学化学化学化学</td>
+                    <td>生物生物生物生物生物生物</td>
+                </tr>
+                <tr>
+                    <td>语文</td>
+                    <td>数学</td>
+                    <td>英语</td>
+                </tr>
+                <tr>
+                    <td>物理</td>
+                    <td>化学</td>
+                    <td>生物</td>
+                </tr>
+            </table>
+        </div>
+        
+        <form>
+            <div class="form-group has-success has-feedback">
+                <label for="account" class="control-label">账号</label>
+                <input type="text" class="form-control" id="account" disabled>
+                <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+            </div>
+            <button class="btn btn-success" title="点击登录">按钮</button>
+        </form>
+
+        <span class="caret"></span>
+
+    </main>
+    
+    320*768
+    640*1536
+
+</body>
+
+<!-- 先导入jquery.js，再导入bootstrap.js -->
+<script src="jquery.js"></script>
+<script src="bootstrap/js/bootstrap.js"></script>
+
+</html>

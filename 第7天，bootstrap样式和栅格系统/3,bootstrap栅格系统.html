@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>bootstrap基本配置</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <style lang="">
+        header{
+            height: 80px;
+            background-color: #999;
+        }
+
+        main{
+            background-color: cyan;
+            /* height: 1000px; */
+        }
+
+        nav{
+            background-color: yellow;
+            height: 80px;
+        }
+
+        .box{
+            height: 100px;
+            border: solid 2px red;
+        }
+
+        .lit{
+            height: 20px;
+            border: solid 1px blue;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- bootstrap中，有两种容器，container（定宽居中）和container-fluid（和父元素等宽）。这两种容器中可以使用栅格系统进行横向布局 -->
+
+    <header class="container-fluid">
+        <nav class="container"></nav>
+    </header>
+
+    <!-- 在栅格系统中，一个容器纵向被分为12列，容器中的元素可以通过设置class标明自己占多少列。 -->
+
+    <!-- 栅格系统将屏幕尺寸分为4个等级：lg,md,sm,xs -->
+    <!-- 
+        lg(large):屏幕宽度大于1200px时。
+        md(middle):小于1200px大于992px时。
+        sm(small):小于992px大于768px时。
+        xs:小于768时。
+     -->
+
+     <!-- col-lg-3:本元素在大屏幕下占3列。 -->
+
+    <main class="container">
+        <div class="row clearfix">
+            <div class="box col-lg-3 col-md-4 col-sm-6 col-xs-12">123</div>
+            <div class="box col-lg-3 col-md-4 col-sm-6 col-xs-12">123</div>
+            <div class="box col-lg-3 col-md-4 col-sm-6 col-xs-12">123</div>
+            <div class="box col-lg-3 col-md-4 col-sm-6 col-xs-12">123</div>
+            <div class="box col-lg-3 col-md-4 col-sm-6 col-xs-12">123</div>
+            <div class="box col-lg-3 col-md-4 col-sm-6 col-xs-12">123</div>
+            <div class="box col-lg-3 col-md-4 col-sm-6 col-xs-12">123</div>
+            <div class="box col-lg-3 col-md-4 col-sm-6 col-xs-12">123</div>
+            <div class="box col-lg-3 col-md-4 col-sm-6 col-xs-12">123</div>
+    
+            <!-- 任何一个元素都可以再次作为容器，使用栅格系统。 -->
+            <!-- 栅格系统可以嵌套使用 -->
+            <div class="box col-lg-6 col-md-12 col-sm-6 col-xs-12 container">
+                <div class="lit col-lg-3 col-md-4 col-sm-6 col-xs-12"></div>
+                <div class="lit col-lg-3 col-md-4 col-sm-6 col-xs-12"></div>
+                <div class="lit col-lg-3 col-md-4 col-sm-6 col-xs-12"></div>
+                <div class="lit col-lg-3 col-md-4 col-sm-6 col-xs-12"></div>
+                <div class="lit col-lg-3 col-md-4 col-sm-6 col-xs-12"></div>
+                <div class="lit col-lg-3 col-md-4 col-sm-6 col-xs-12"></div>
+                <div class="lit col-lg-3 col-md-4 col-sm-6 col-xs-12"><span class="glyphicon glyphicon-heart"></span></div>
+            </div>
+        </div>
+        
+        
+
+        <div class="row">
+            <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                    Dropdown
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </main>
+
+
+
+</body>
+
+<script src="jquery.js"></script>
+<script src="bootstrap/js/bootstrap.js"></script>
+
+</html>
