@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+
+    //在编程语言中，数据的赋值和函数参数的传递，分为两种类型：引用传递和值传递。
+
+    // 值传递，通过值传递进行赋值或传参时，会将变量的值copy一份，传递给新的变量或作为参数传入函数内部。
+
+    // 通过引用传递赋值或传参时，会直接把变量的内存地址交给另一个变量（或作为参数传入函数），也就是最终，两个变量指向了同一个数据。
+
+    //在js中，所有基本类型的数据都是值传递，所有非基本类型(引用类型)的数据都是引用传递。
+
+    // var a = 3;
+    // var b = a;
+    // a = 5;
+    // console.log(b);
+
+
+    // var c = [1,2,3];
+    // var d = c;
+    // c[0] = 99;
+    // console.log(d);
+
+    //引用类型的变量，在赋值时，实际上是改变了它的指向。
+    var a1 = [1,2,3];
+    var a2 = a1;
+    a1 = [4,5,6];
+    console.log(a2);
+
+    //-----------------------------------------
+
+    function f1(arr){
+        // 修改了arr变量所指向的对象。
+        arr.pop();
+
+        // 改变了arr变量的指向。
+        // arr = [2,2,2];
+    }
+    var a3 = [1,2,3,4];
+    f1(a3);
+    console.log(a3);
+
+    //----------------------------------------
+
+    function f2(n){
+        n++;
+    }
+    var num = 6;
+    f2(num);
+    console.log(num);
+
+</script>
+
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+
+    //数字类型作为布尔值使用时，0会被认为false,非0都是true
+    var a = 3;
+    if(a){
+        console.log("数字类型作为布尔值使用时，0会被认为false,非0都是true");
+    }
+    //-----------------------------------
+
+    //空字符串会被认为false，非空的字符串都是true。
+    var b = "";
+    if(b){
+        console.log("字符串");
+    }
+    //---------------------------------------
+
+    //任何对象（空对象，数组，函数等）都会被认为true。
+    var o = {};
+    if(o){
+        console.log("对象");
+    }
+
+    //即使是值为flase的布尔对象，在直接被当做布尔值使用时，也会被认为true。通过valueOf()方法，可以获得一个基本类型对象的基本类型值。
+    // var c = new Boolean(false);
+    // if(c.valueOf()){
+    //     console.log("布尔对象");
+    // }
+
+    //-----------------------------------------
+
+    // var d = undefined;//(未定义的)
+    // var d = null;//(空)
+    // var d = NaN;//(not a number,不是数字)
+    // undefined,null,NaN都会被认为false
+    if(d){
+        console.log("undefined");
+    }
+
+
+    //证明在10000范围内哥德巴赫猜想成立。
+    //1,从4循环到10000，每次i+2.
+    //2,在循环中证明i可以写为2个质数之和。
+        //1,找出小于i的所有质数，并把这些质数放入一个数组arr1。
+        //2,遍历arr1，用i-arr1中的某个质数，看结果是不是质数，如果是,i这个数字成立.输出这个组合，然后break。
+
+    //---------------------------------------
+    //有一筐苹果，各个苹果的重量存放在一个数组中[0.3,0.2,0.4,0.25,0.33,0.21,0.16,0.2,........]，有一个最多能装20斤的袋子，问最多可以装多少个苹果。
+
+    //-----------------------------------------
+    //求两个数的最大公约数和最小公倍数。
+
+    
+
+
+
+</script>
+
+
+</html>
