@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style lang="">
+        body{
+            margin: 0;
+        }
+
+        #ball{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="ball"></div>
+</body>
+
+
+<script>
+    var wh = document.documentElement.clientHeight;
+    var ww = document.documentElement.clientWidth;
+    
+    var bottomY = wh - 50;
+    var rightX = ww - 50;
+
+    var x = 50;
+    var y = 300;
+
+    var ball = document.getElementById("ball");
+
+    ball.style.left = x+"px";
+    ball.style.top = y+"px";
+
+    var a = 2;
+    var vy = -20;
+    var vx = 10;
+
+    function move(){
+        y+=vy;
+        x+=vx;
+        ball.style.top = y+"px";
+        ball.style.left = x+"px";
+        ani = requestAnimationFrame(move);
+        vy+=a;
+
+        if(y>=bottomY){
+            y = bottomY;
+            vy = -vy;
+            vy*=0.8;
+            vy+=2;
+            if(Math.abs(vy)<=5){
+                vy = 0;
+            }
+        }
+
+        if(x>=rightX){
+            // x = rightX;
+            // vx = -vx;
+            cancelAnimationFrame(ani);
+        }
+
+        if(x<=0){
+            x = 0;
+            vx = -vx;
+        }
+
+        // if(y<=0){
+        //     y = 0;
+        //     cancelAnimationFrame(ani);
+        // }
+    }
+
+    var ani = requestAnimationFrame(move);
+
+</script>
+
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    var cityInfo = [
+        {
+            name:"河南省",
+            cities:["郑州","开封","洛阳","驻马店","漯河"]
+        },
+        {
+            name:"河北省",
+            cities:["石家庄","保定","邯郸","邢台"]
+        },
+        {
+            name:"山东省",
+            cities:["济南","青岛","菏泽"]
+        }
+    ];
+
+    var ps = document.createElement("select");
+    document.body.appendChild(ps);
+    
+    for(var i = 0;i<cityInfo.length;i++){
+        var opt = document.createElement("option");
+        opt.textContent = cityInfo[i].name;
+        ps.appendChild(opt);
+    }
+
+    var cs = document.createElement("select");
+    document.body.appendChild(cs);
+
+    for(var i = 0;i<cityInfo[0].cities.length;i++){
+        var opt = document.createElement("option");
+        opt.textContent = cityInfo[0].cities[i];
+        cs.appendChild(opt);
+    }
+
+    
+
+    //-------------------------------------------
+
+    ps.onchange = function(){
+        //先清空下拉列表。
+        cs.innerHTML = "";
+        // 下拉列表的selectedIndex表示当前被选中的选项的索引。
+        console.log(ps.selectedIndex);
+
+        //再把所选省份的城市添加入下拉列表。
+        for(var i = 0;i<cityInfo[ps.selectedIndex].cities.length;i++){
+            var opt = document.createElement("option");
+            opt.textContent = cityInfo[ps.selectedIndex].cities[i];
+            cs.appendChild(opt);
+        }
+
+        addChange();
+    }
+
+    cs.onchange = addChange;
+
+    function addChange(){
+        var province = cityInfo[ps.selectedIndex].name;
+
+        var city = cityInfo[ps.selectedIndex].cities[cs.selectedIndex];
+        address.textContent = province+","+city;
+    }
+
+    var q = document.createElement("select");
+    q.innerHTML = "<option>新郑</option>";
+    document.body.appendChild(q);
+
+    var address = document.createElement("p");
+    document.body.appendChild(address);
+
+</script>
+
+</html>

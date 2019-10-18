@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style lang="">
+        body{
+            margin: 0;
+        }
+        nav{
+            background-color: aqua;
+        }
+        #list{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        #list li{
+            height: 50px;
+            line-height: 50px;
+            padding: 0 20px;
+        }
+
+        #list li:hover{
+            background-color: red;
+        }
+
+        #collapse-nav{
+            background-color: skyblue;
+            height: 0px;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 50px;
+            transition: all 0.5s;
+            overflow: hidden;
+        }
+
+        #collapse-nav.show{
+            height: 130px;
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <ul id="list">
+            <li>小米手机</li>
+            <li>红米</li>
+            <li>电视</li>
+        </ul>
+    </nav>
+
+    <div id="collapse-nav"></div>
+</body>
+
+<script>
+    var lis = document.querySelectorAll("#list li");
+
+    // 把一个类数组转为真正的数组。
+    lis = Array.from(lis);
+
+    var cn = document.getElementById("collapse-nav");
+
+    var timer;
+
+    for(var i = 0;i<lis.length;i++){
+
+        // lis[i].index = i;
+
+        lis[i].onmouseenter = function(){
+            cn.classList.add("show");
+            // this.index;
+            // console.log(lis.indexOf(this));
+            //获取鼠标指向的li的索引。
+            var ind = lis.indexOf(this);
+            // 根据这个索引从数据源数组中获得要展示的数据。
+            var obj = arr[ind];
+            //清空折叠导航内容
+            cn.innerHTML = "";
+            //添加新内容。
+            var ul = document.createElement("ul");
+            cn.appendChild(ul);
+            for(var i = 0;i<obj.content.length;i++){
+                var li = document.createElement("li");
+                li.textContent = obj.content[i];
+                ul.appendChild(li);
+            }
+        }
+
+
+        lis[i].onmouseleave = function(){
+            cn.classList.remove("show");
+        }
+    }
+
+    cn.onmouseenter = function(){
+        cn.classList.add("show");
+    }
+
+    cn.onmouseleave = function(){
+        cn.classList.remove("show");
+    }
+
+    var arr = [
+        {
+            name:"小米手机",
+            content:["小米1","小米2","小米3","小米4"]
+        },
+        {
+            name:"红米",
+            content:["红米1","红米2","红米3"]
+        },
+        {
+            name:"电视",
+            content:["电视1","电视2","电视3"]
+        }
+    ]
+
+</script>
+
+</html>

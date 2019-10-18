@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style lang="">
+        hr{
+            border-top: solid 1px red;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- input的value属性，设置输入框的内容 -->
+    <input type="text" placeholder="请输入账号" value="admin" id="account-field">
+    <p id="account-label">admin</p>
+
+    <input type="text" value="1" id="n1">+
+    <input type="text" value="2" id="n2">=
+    <span id="sum-label">3</span>
+
+    <hr>
+
+    <select id="province-sel">
+        <!-- option标签，如果不写value，则value默认为标签内容，如果写了value，页面上下拉列表中显示的是标签内容，但是通过js获取value时是设置的value值。 -->
+        <option value="1">河南</option>
+        <option value="2">河北</option>
+        <option value="3">山东</option>
+    </select>
+
+    <p id="province-label">河南</p>
+
+    <hr>
+
+    <!-- input,type=color时，显示为颜色选择器，value是一个256位的rgb值 -->
+    <input type="color" onchange="colorChange(event)">
+
+    <hr>
+
+    <!-- input,type=file，显示为文件选择器，multiple属性规定可以选中多个文件，accept设置可选的文件类型 -->
+    <input type="file" multiple accept="image/*">
+
+    <hr>
+
+    <!-- input,type=date -->
+    <input type="date" onchange="dateChange(event)">
+
+</body>
+
+<script>
+    var af = document.getElementById("account-field");
+    var al = document.getElementById("account-label");
+
+    // 输入框的oninput事件，当输入框中的内容发生编辑时触发。
+
+    af.oninput = function(e){
+        // console.log("编辑了");
+        al.textContent = this.value;
+    }
+
+    var n1 = document.getElementById("n1");
+    var n2 = document.getElementById("n2");
+    var sl = document.getElementById("sum-label");
+
+    function numberChange(){
+        sl.textContent = Number(n1.value) + parseInt(n2.value);
+    }
+
+    n1.oninput = numberChange;
+    n2.oninput = numberChange;
+
+    //-------------------------------------------
+
+    var ps = document.getElementById("province-sel");
+    var pl = document.getElementById("province-label");
+
+    //onchange，当元素内容值发生改变时触发。可以用于select。单选框和多选框的改变也会触发onchange
+    ps.onchange = function(){
+
+        //select的value值，取决于当前select中被选中的option的值。
+        // console.log(this.value);
+
+        pl.textContent = this.value;
+    }
+
+    //-------------------------------------------
+
+    function colorChange(e){
+        console.log(e.target.value);
+    }
+
+    function dateChange(e){
+        console.log(e.target.value);
+    }
+
+</script>
+
+
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style lang="">
+        body{
+            margin: 0;
+        }
+        nav{
+            background-color: aqua;
+        }
+
+        #nav-list{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        #nav-list li{
+            height: 50px;
+            line-height: 50px;
+            padding: 0 20px;
+        }
+
+        #nav-list li:hover{
+            background-color: red;
+        }
+
+        #xiaomi{
+            width: 200px;
+            background-color: greenyellow;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            height: 100px;
+            
+            overflow: hidden;
+            transition: all 0.3s;
+            transition-delay: 0s;
+        }
+
+        #xiaomi.hide{
+            height: 0px;
+            transition-delay: 0.2s;
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <ul id="nav-list">
+            <li>小米手机</li>
+            <li>红米</li>
+            <li>电视</li>
+        </ul>
+    </nav>
+
+    <div id="xiaomi" class="hide">
+        <ul>
+            <li>小米1</li>
+            <li>小米2</li>
+            <li>小米3</li>
+        </ul>
+    </div>
+
+    <h1>2j930rvuw98tvnwtv8w</h1>
+
+
+</body>
+
+<script>
+    var xiaomi = document.getElementById("xiaomi");
+    var lis = document.querySelectorAll("#nav-list li");
+    lis[0].onmouseenter = function(){
+        xiaomi.classList.remove("hide");
+    }
+
+    lis[0].onmouseleave = function(){
+        xiaomi.classList.add("hide");
+    }
+
+    xiaomi.onmouseenter = function(){
+        xiaomi.classList.remove("hide");
+    }
+
+    xiaomi.onmouseleave = function(){
+        xiaomi.classList.add("hide");
+    }
+
+
+</script>
+
+</html>
