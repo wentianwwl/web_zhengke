@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+
+<script>
+    
+    var str = "sdflasdfisaoidjfoijoiwur938u4r094jf0wjfw0f";
+
+    var obj = {};
+
+    for(var i = 0;i<str.length;i++){
+        var ch = str[i];
+
+        if(obj[ch]==undefined){
+            obj[ch] = 1;
+        }else{
+            obj[ch]++;
+        }
+    }
+
+    // console.log(obj);
+
+    var o1 = {
+        name:"sun",
+        age:23,
+        gender:true
+    }
+    // 对象的遍历
+    //使用for..in可以遍历一个对象的所有键
+    for (var k in o1) {
+        // console.log(k);
+        // console.log(o1[k]);
+    }
+
+    var maxCount = 0;
+    var ch;
+
+    for (var k in obj) {
+        if(obj[k]>maxCount){
+            maxCount = obj[k];
+            ch = k;
+        }
+    }
+
+    console.log("字母是"+ch+"，出现了"+maxCount+"次");
+
+
+
+
+</script>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    
+    //交换两个变量的值。
+
+    var a = 3;
+    var b = 6;
+
+    var c = a;
+    a = b;
+    b = c;
+
+    // a = a + b;  //a:9  b:6
+    // b = a - b;  //a:9  b:3
+    // a = a - b;  //a:6  b:3
+
+    // a = a ^ b;
+    // b = a ^ b;
+    // a = a ^ b;
+    
+    // console.log(a);
+    // console.log(b);
+    var arr = [5,4,6,2,8,5,9,1];
+    //---------------------------------------------------------
+    
+    //未优化的冒泡排序
+    // for(var j = 0;j<arr.length-1;j++){
+    //     for(var i = 0;i<arr.length-1;i++){
+    //         if(arr[i]>arr[i+1]){
+    //             var temp = arr[i];
+    //             arr[i] = arr[i+1];
+    //             arr[i+1] = temp;
+    //         }
+    //     }
+    // }
+
+    //--------------------------------------------------
+    //优化之后的冒泡排序
+    //[5,4,6,2,8,5,9,1];
+    for(var j = 0;j<arr.length-1;j++){
+        for(var i = 0;i<arr.length-1-j;i++){
+            if(arr[i]>arr[i+1]){
+                var temp = arr[i];
+                arr[i] = arr[i+1];
+                arr[i+1] = temp;
+            }
+        }
+    }
+
+    //---------------------------------------------------
+    //插入排序
+
+    //[1,2,5,5|,8,1,9,4,7]
+
+
+
+
+    console.log(arr);
+
+    
+
+
+</script>
+
+</html>

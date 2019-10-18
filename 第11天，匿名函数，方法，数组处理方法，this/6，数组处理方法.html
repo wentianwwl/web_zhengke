@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+
+    var arr = [2,1,3,5,4];
+
+    //push方法，向数组的最后添加一个新的元素。
+    arr.push(10);
+
+
+    //pop方法，从数组最后删除一个元素。返回值就是删除的元素。
+    var res = arr.pop();
+    console.log(res);
+
+    //push和pop可以形成一对栈操作。
+
+
+    //unshift，向数组最前边添加一个元素。
+    arr.unshift(10);
+    console.log(arr);
+    //shift，从数组中删除一个元素，返回值就是删除的元素。
+    arr.shift();
+    console.log(arr);
+    //unshift和shift也是一对栈操作。
+    //push和shift是队列操作。
+    //unshift和pop是队列操作。
+
+    //--------------------------------------------------------
+
+    // splice方法，既可用于向数组中任意位置插入新的元素，也可用于从数组任意位置删除元素。
+    //第一个参数表示从哪个位置开始删，第二个参数表示删几个元素，第三个参数开始表示删除之后所替换的新元素。
+    // arr.splice(2,0,2.5);
+    console.log(arr);
+
+    //-----------------------------------------------------
+
+    //reverse方法，使数组中元素的顺序颠倒。
+    arr.reverse();
+    console.log(arr);
+
+    //数组的所有方法分为两大类：内处理方法和外处理方法。内处理方法调用之后，数组本身的内容发生了变化；外处理方法调用之后，数组本身的内容不发生变化，执行的结果通过函数返回值返回。以上的方法都是内处理方法。
+    //--------------------------------------------------
+
+    // join方法，将数组中的每一个元素强制转为字符串，然后拼接成一个完整的字符串，参数是分隔符，默认的分隔符是逗号。  
+    //join,是外处理方法。
+    var s1 = arr.join("");
+    console.log(s1);
+
+    //----------------------------------------------------------
+
+    var arr2 = [0,1,2,3,4,5,6,7,8,9];
+
+    //slice，数组截取，第一个参数表示从第几个位置开始截（含），第二个参数表示截取到第几个位置（不含）。
+    //外处理
+    var arr3 = arr2.slice(3,6);
+
+    console.log(arr3);
+
+    //----------------------------------------------------------
+
+    var arr4 = [1,2,3];
+    var arr5 = [4,5,6];
+
+    //concat,数组拼接，外处理。
+    var arr6 = arr4.concat(arr5);
+    console.log(arr6);
+
+    //--------------------------------------------------------
+    
+    var arr7 = ["12","qw","45","ddd","yhh"];
+    //indexOf,判断数组中是否包含某个元素，如果包含则返回元素第一次出现的位置，如果不包含则返回-1
+    var ind = arr7.indexOf("45");
+    console.log(ind);
+
+</script>
+
+</html>

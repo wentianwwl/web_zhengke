@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    var plate = prompt("请输入您的车牌");
+    var now = new Date();
+
+    //获得车牌号最后一位数字的函数。传入一个车牌号字符串，返回最后一位数字。
+    function lastNumberOfPlate(p){
+        var index = p.length-1;
+        do{
+            var ch = p[index];
+            if(ch.charCodeAt(0)>=48&&ch.charCodeAt(0)<=57){
+                return ch*1;
+            }
+            index--;
+        }while(index>=0);
+    }
+
+    //计算尾号。
+    var lastNumber = lastNumberOfPlate(plate);
+
+
+
+
+    //按单双号限行
+    // var date = now.getDate();
+
+    // if((date+lastNumber)%2==0){
+    //     alert("不限行");
+    // }else{
+    //     alert("限行");
+    // }
+
+
+
+
+    //按照星期限行  
+    var weekday = now.getDay();
+    if(weekday==0||weekday==6){
+        alert("不限行");
+    }else{
+        var h = now.getHours();
+        if(h>=7&&h<21){
+            //尾号
+            lastNumber = lastNumber%5;
+            //星期几
+            weekday = weekday%5;
+            if(lastNumber==weekday){
+                alert("限行");
+            }else{
+                alert("不限行");
+            }
+        }
+    }
+
+
+</script>
+
+
+</html>

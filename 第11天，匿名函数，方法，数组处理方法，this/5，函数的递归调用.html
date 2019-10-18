@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+
+    //递归：函数在一定的条件下，自身调用自身，或者多个函数之间相互调用，保证是可以退出的，叫做函数的递归调用。
+
+    // function f1(n){
+    //     console.log(n);
+    //     if(n>0){
+    //         f1(n-1);
+    //     }
+    //     console.log(n);
+    // }
+
+    // f1(3);
+
+    
+    //使用递归计算阶乘。
+    function jiecheng(n){
+        if(n==1){
+            return 1;
+        }
+        return n*jiecheng(n-1);
+    }
+    console.log(jiecheng(4));
+    
+
+    //斐波那契数列。
+    //1,1,2,3,5,8,13,21,34,55,.......
+
+    function fibonacci(n){
+        if(n<3){
+            return 1;
+        }
+
+        return fibonacci(n-1)+fibonacci(n-2);
+    }
+
+    console.log(fibonacci(7));
+
+
+    //可选作业：使用递归计算汉诺塔移动步骤。
+
+</script>
+
+</html>

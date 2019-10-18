@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    //对象主要由两部分组成---属性和方法。
+
+    //对象的属性可以是任意类型，而函数本身又是对象类型，所以，对象的属性可以是一个函数，这种属性称之为方法。
+
+
+    var people = {
+        name:"sunhuayu",
+        age:23,
+        // 在对象字面量中，可以通过匿名函数为一个对象添加方法。
+        speak:function(){
+            console.log("我是一个会说话的人");
+        }
+    };
+
+    // 通过 对象.方法名()  的形式调用对象的方法。
+    people.speak();
+
+
+    //对象创建之后可以添加新的方法。
+
+    people.walk = function(){
+        console.log("我正在走路");
+    }
+
+    people.walk();
+
+
+
+</script>
+
+</html>
