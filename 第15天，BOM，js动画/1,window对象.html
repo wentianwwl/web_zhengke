@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    // document  (DOM)
+
+    //window对象，浏览器在打开一个页面后，除了将html文档转为一个document对象之外，还会将浏览器本身的一些功能和属性整理为一个对象(window对象)，放入js环境，这个模型成为BOM(browser object model)，浏览器对象模型。
+    //通过DOM可以操作页面，而通过BOM可以操作浏览器。
+
+    // console.log(window);
+
+
+    //在浏览器环境中(非严格模式下)，window对象就是全局对象。
+
+
+    // 在全局域添加的变量，相当于给window对象添加了一个属性。访问全局变量，实际上访问的也是window的同名属性。
+    // window.abc = 123;
+    // console.log(abc);
+    var abc = 123;
+    console.log(window.abc);
+
+    // console.log(window.document);
+    // console.log(window.Math.floor(4.3));
+
+
+    //在全局域声明的函数，相当于window对象的方法。
+    function f1(){
+        console.log(this);
+    }
+
+    window.f1();
+
+    window.alert("333");
+
+
+    // 所以，对于window对象中的属性和方法，window.xxxxx在使用时，window.可以省略。
+    
+
+
+
+
+</script>
+
+
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style lang="">
+        #box{
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            position: absolute;
+            left: 30px;
+            top: 0;
+        }
+        body{
+            margin: 0;
+        }
+        #back{
+            background-color: greenyellow;
+            position: fixed;
+            right: 50px;
+            bottom: 50px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+        <h1>撑开页面</h1>
+        <h1>撑开页面</h1>
+        <h1>撑开页面</h1>
+        <h1>撑开页面</h1>
+        <h1>撑开页面</h1>
+        <h1>撑开页面</h1>
+        <h1>撑开页面</h1>
+        <h1>撑开页面</h1>
+        <h1>撑开页面</h1>
+        <h1>撑开页面</h1>
+        <h1>撑开页面</h1>
+        <h1>撑开页面</h1>
+        <h1>撑开页面</h1>
+        <h1>撑开页面</h1>
+        <h1>撑开页面</h1>
+        <h1>撑开页面</h1>
+        <h1>撑开页面</h1>
+        <h1>撑开页面</h1>
+        <h1>撑开页面</h1>
+        <h1>撑开页面</h1>
+        <h1>撑开页面</h1>
+        <h1>撑开页面</h1>
+        <h1>撑开页面</h1>
+    
+    <div id="back">回到顶部</div>
+</body>
+
+
+<script>
+    var box = document.getElementById("box");
+
+    var left = 30;
+    var rotate = 0;
+
+    var timer = setInterval(function(){
+        left+=1;
+        rotate+=3;
+        box.style.left = left+"px";
+        box.style.transform = "rotate("+rotate+"deg)";
+
+        if(left>=230){
+            clearInterval(timer);
+        }
+
+    },20);
+
+    var back = document.getElementById("back");
+    back.onclick = function(){
+        // document.documentElement.scrollTop = 0;
+        var step = document.documentElement.scrollTop/15;
+        var timer = setInterval(function(){
+            // document.documentElement.scrollBy(0,-100);
+
+            document.documentElement.scrollTop = document.documentElement.scrollTop - step;
+            if(document.documentElement.scrollTop<=0){
+                clearInterval(timer);
+            }
+        },16.67);
+        
+    }
+
+
+
+
+
+</script>
+
+
+</html>

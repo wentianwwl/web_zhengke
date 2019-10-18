@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="stop()">停止</button>
+</body>
+
+<script>
+
+    // 使用setTimeout实现setInterval的效果。
+    function steper(){
+        // console.log(123);
+        timer = setTimeout(steper,1000);
+    }
+
+    var timer = setTimeout(steper,1000);
+
+    function stop(){
+        clearTimeout(timer);
+    }
+    
+
+    //requestAnimationFrame，设置浏览器下一次帧刷新时执行的函数。参数是一个函数。
+    //浏览器刷新率：浏览器默认每秒刷新60次，60fps（每秒钟最多切换60个画面）。所以requestAnimationFrame的调用间隔大约是1000/60=16.67毫秒。（当计算机资源吃紧，卡顿时，这个间隔会变长）
+
+    var i = 0;
+
+    function refresh(){
+        // console.log("浏览器刷新了");
+        i++;
+        requestAnimationFrame(refresh);
+    }
+
+    requestAnimationFrame(refresh);
+
+    setTimeout(function(){
+        console.log(i);
+    },1000);
+
+    // requestAnimationFrame，是h5中新增的webAPI，是专门为js动画设计的，它可以防止在计算机卡顿时丢帧。
+
+
+</script>
+
+</html>

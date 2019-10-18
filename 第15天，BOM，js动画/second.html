@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <a href="third.html">进入第3页</a>
+    <h1>这是第二个页面</h1>
+    <button id="back">返回</button>
+    <button id="forward">前进</button>
+</body>
+
+
+<script>
+
+    //window的history属性是一个对象，记录了当前页面的访问记录。
+    console.log(history);
+
+    var back = document.getElementById("back");
+    back.onclick = function(){
+        // history对象的back方法，后退到上一层访问记录页面。
+        // history.back();
+
+        // history.go方法，前进或后退n层。
+        history.go(-2);
+    }
+
+    var forward = document.getElementById("forward");
+    forward.onclick = function(){
+        //forward方法，前进一层。
+        // history.forward();
+        history.go(1);
+    }
+
+    
+
+</script>
+
+</html>

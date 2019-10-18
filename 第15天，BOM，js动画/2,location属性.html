@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">百度一下</button>
+
+    <button id="refresh-btn">刷新</button>
+
+</body>
+
+<script>
+
+    //window的location属性是一个对象，其中记录了当前所显示的页面的地址。
+    console.log(location);
+
+    //location对象的href属性表示当前页面地址的url。
+    console.log(location.href);
+
+    var btn = document.getElementById("btn");
+
+    btn.onclick = function(){
+        // 修改页面的location.href可以使页面跳转。
+
+        location.href = "http://www.baidu.com";
+
+        //window.open也可以打开一个新页面。
+        // window.open("http://www.baidu.com");
+
+        //页面替换到新的地址，不记入历史记录。
+        // location.replace("http://www.baidu.com");
+    }
+
+    var refreshBtn = document.getElementById("refresh-btn");
+
+    refreshBtn.onclick = function(){
+        // location对象的reload()方法，刷新当前页面。
+        location.reload();
+    }
+
+</script>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style lang="">
+        #box{
+            width: 500px;
+            height: 300px;
+            border: solid 1px black;
+            overflow-y: scroll;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <p>初始内容</p>
+        <p>初始内容</p>
+        <p>初始内容</p>
+        <p>初始内容</p>
+        <p>初始内容</p>
+        <p>初始内容</p>
+        <p>初始内容</p>
+        <p>初始内容</p>
+        <p>初始内容</p>
+        <p>初始内容</p>
+        <p>初始内容</p>
+        <p>初始内容</p>
+        <p>初始内容</p>
+        <p>初始内容</p>
+        <p>初始内容</p>
+        <p>初始内容</p>
+        <p>初始内容</p>
+        <p>初始内容</p>
+        <p>初始内容</p>
+        <p>初始内容</p>
+        <p>初始内容</p>
+    </div>
+</body>
+
+<script>
+    var box = document.getElementById("box");
+
+    box.onscroll = function(){
+        if(this.scrollTop>=this.scrollHeight-this.clientHeight-50){
+            createP();
+        }
+    }
+
+    function createP(){
+        for(var i = 0;i<5;i++){
+            var p = document.createElement("p");
+            p.textContent = "新添加的内容";
+            box.appendChild(p);
+        }
+    }
+
+
+</script>
+
+
+</html>

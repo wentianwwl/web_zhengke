@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style lang="">
+        body{
+            margin: 0;
+        }
+        header{
+            height: 100px;
+            background-color: aqua;
+        }
+
+        nav{
+            height: 50px;
+            background-color: bisque;
+            width: 100%;
+            /* z-index: -1; */
+        }
+
+        .fixed{
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        #back{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: solid 1px grey;
+            background-color: white;
+            cursor: pointer;
+            position: fixed;
+            right: 100px;
+            bottom: 100px;
+            text-align: center;
+            line-height: 25px;
+            display: none;
+        }
+
+        #back.show{
+            display: block;
+        }
+
+        #back:hover{
+            background-color: pink;
+        }
+
+        #nav-content{
+            height: 50px;
+            width: 1000px;
+            background-color: azure;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        #nav-list{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            position: relative;
+        }
+
+        #nav-list li{
+            float: left;
+            height: 50px;
+            line-height: 50px;
+            font-size: 16px;
+            font-weight: 700;
+            /* z-index: 5; */
+        }
+
+        #nav-list li:nth-of-type(1){
+            background-color: red;
+        }
+
+        #nav-list li a{
+            display: block;
+            padding: 0 20px;
+            height: 50px;
+            /* z-index: 5; */
+        }
+
+        .clear-fix:after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        #focus-box{
+            background-color: red;
+            height: 50px;
+            position: absolute;
+            /* width: 100px; */
+            top: 0;
+            /* z-index: -1; */
+            transition: all 0.3s;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div id="back">回到<br>顶部</div>
+
+    <header>
+
+    </header>
+    <nav id="nav-bar">
+        <div id="nav-content">
+            <div id="focus-box"></div>
+            <ul id="nav-list" class="clear-fix">
+                <li><a href="#">百家号</a></li>
+                <li><a href="#">国内</a></li>
+                <li><a href="#">国际</a></li>
+                <li><a href="#">军事</a></li>
+                <li><a href="#">社会</a></li>
+                <li><a href="#">财经</a></li>
+                <li><a href="#">个性推荐</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <p>页面正文内容</p>
+    <p>页面正文内容</p>
+    <p>页面正文内容</p>
+    <p>页面正文内容</p>
+    <p>页面正文内容</p>
+    <p>页面正文内容</p>
+    <p>页面正文内容</p>
+    <p>页面正文内容</p>
+    <p>页面正文内容</p>
+    <p>页面正文内容</p>
+    <p>页面正文内容</p>
+    <p>页面正文内容</p>
+    <p>页面正文内容</p>
+    <p>页面正文内容</p>
+    <p>页面正文内容</p>
+    <p>页面正文内容</p>
+    <p>页面正文内容</p>
+    <p>页面正文内容</p>
+    <p>页面正文内容</p>
+    <p>页面正文内容</p>
+    <p>页面正文内容</p>
+    <p>页面正文内容</p>
+    <p>页面正文内容</p>
+    <p>页面正文内容</p>
+    <p>页面正文内容</p>
+    <p>页面正文内容</p>
+    <p>页面正文内容</p>
+    <p>页面正文内容</p>
+    <p>页面正文内容</p>
+    <p>页面正文内容</p>
+    <p>页面正文内容</p>
+    <p>页面正文内容</p>
+    <p>页面正文内容</p>
+    <p>页面正文内容</p>
+    <p>页面正文内容</p>
+    <p>页面正文内容</p>
+    <p>页面正文内容</p>
+    <p>页面正文内容</p>
+    <p>页面正文内容</p>
+    <p>页面正文内容</p>
+    <p>页面正文内容</p>
+    <p>页面正文内容</p>
+
+
+</body>
+
+<script>
+
+    var navBar = document.getElementById("nav-bar");
+    var backBtn = document.getElementById("back");
+    var focusBox = document.getElementById("focus-box");
+
+    document.onscroll = function(e){
+        if(document.documentElement.scrollTop>=100){
+            navBar.classList.add("fixed");
+        }else{
+            navBar.classList.remove("fixed");
+        }
+
+        var showBackPos = document.documentElement.scrollHeight*0.1;
+
+        if(document.documentElement.scrollTop>=showBackPos){
+            backBtn.classList.add("show");
+        }else{
+            backBtn.classList.remove("show");
+        }
+
+    }
+
+    backBtn.onclick = function(){
+        document.documentElement.scrollTop = 0;
+    }
+
+    var firstLi = document.querySelector("#nav-list li");
+
+    // console.log(firstLi.offsetLeft);
+
+    focusBox.style.left = firstLi.offsetLeft+"px";
+    focusBox.style.width = firstLi.offsetWidth+"px";
+
+    var lis = document.querySelectorAll("#nav-list li");
+
+    for(var i = 0;i<lis.length;i++){
+        var li = lis[i];
+        li.onmouseenter = function(e){
+            focusBox.style.left = this.offsetLeft+"px";
+            focusBox.style.width = this.offsetWidth+"px";
+        }
+        li.onmouseleave = function(){
+            focusBox.style.left = firstLi.offsetLeft+"px";
+            focusBox.style.width = firstLi.offsetWidth+"px";
+        }
+    }
+
+    
+
+
+</script>
+
+
+
+</html>
