@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="list">
+        <li class="item">足球</li>
+        <li class="item">篮球</li>
+        <li class="item">乒乓球</li>
+    </ul>
+</body>
+
+<script src="jquery.js"></script>
+
+<script>
+
+    //jq对象.on()方法，用于为jq对象中所有的元素添加事件监听，第一个参数是监听的事件类型，第二个参数是事件绑定的函数。这个函数的参数和原生事件函数相同，this表示触发事件的元素，参数e表示事件对象。
+
+    function liClick(){
+        console.log($(this).text());
+    }
+
+    $(".item").on("click",liClick);
+    
+    //.off方法用于移除已添加的某个事件监听函数。
+    $(".item:nth-of-type(1)").off("click",liClick);
+
+    
+
+</script>
+
+</html>

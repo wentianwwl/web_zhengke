@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        body{
+            margin: 0;
+        }
+        nav{
+            background-color: aqua;
+        }
+
+        #list{
+            display: flex;
+        }
+        #list li{
+            height: 50px;
+            line-height: 50px;
+            padding: 0 20px;
+        }
+        #list li:hover{
+            background-color: yellow;
+        }
+        #panel{
+            /* height: 300px; */
+            height: 0;
+            width: 100%;
+            background-color: white;
+            box-shadow: 5px 5px 15px 0 grey;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            transition: all 0.3s;
+            overflow: hidden;
+        }
+        #panel.show{
+            height: 300px;
+        }
+        
+        #panel ul{
+            display: flex;
+        }
+        #panel ul li{
+            width: 220px;
+            text-align: center;
+        }
+        #panel ul li span{
+            color: orange;
+            border: solid 1px orange;
+            padding: 2px 30px;
+        }
+        #panel ul li img{
+            margin-top: 20px;
+            width: 180px;
+            padding: 0 20px;
+            /* border-right: solid 1px #eee; */
+        }
+        #panel ul li:nth-last-of-type(n+2) img{
+            border-right: solid 1px #eee;
+        }
+        #panel ul li h5{
+            margin-bottom: 0;
+            font-size: 16px;
+            font-weight: 100;
+        }
+        #panel ul li p{
+            margin-top: 10px;
+            color: orange;
+        }
+
+        .hidden{
+            visibility: hidden;
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <ul id="list">
+            <li>小米手机</li>
+            <li>红米</li>
+            <li>电视</li>
+        </ul>
+
+    </nav>
+
+    <div id="panel">
+        <ul>
+            <li>
+                <span>新品</span>
+                <br>
+                <img src="xm1.png">
+                <h5>小米mix5</h5>
+                <p>3299起</p>
+            </li>
+            <li>
+                <span>新品</span>
+                <br>
+                <img src="xm1.png">
+                <h5>小米mix5</h5>
+                <p>3299起</p>
+            </li>
+            <li>
+                <span>新品</span>
+                <br>
+                <img src="xm1.png">
+                <h5>小米mix5</h5>
+                <p>3299起</p>
+            </li>
+        </ul>
+    </div>
+
+</body>
+
+<script>
+
+    var data = [
+        {
+            category:"小米手机",
+            members:[
+                {tag:"新品",pic:"xm1.png",name:"小米mix2",price:"3299起"},
+                {tag:"新品",pic:"xm2.png",name:"小米note3",price:"1999起"},
+                {tag:null,pic:"xm3.png",name:"小米6",price:"2299起"}
+            ]
+        },
+        {
+            category:"红米",
+            members:[
+                {tag:"新品",pic:"hm1.png",name:"红米5",price:"799起"},
+                {tag:"新品",pic:"hm2.png",name:"红米5plus",price:"999起"},
+                {tag:"新品",pic:"hm3.png",name:"红米5A",price:"599起"},
+                {tag:null,pic:"hm4.png",name:"红米note5A标准版",price:"699"}
+            ]
+        },
+        {
+            category:"电视",
+            members:[
+                
+            ]
+        }
+    ];
+
+    var lis = document.querySelectorAll("#list li");
+    var panel = document.getElementById("panel");
+
+    lis = Array.from(lis);
+
+    lis.forEach(function(li,i){
+        li.index = i;
+        li.onmouseenter = function(){
+            panel.classList.add("show");
+            render(this.index);
+        }
+        li.onmouseleave = function(){
+            panel.classList.remove("show");
+        }
+    });
+
+    panel.onmouseenter = function(){
+        panel.classList.add("show");
+    }
+    panel.onmouseleave = function(){
+        panel.classList.remove("show");
+    }
+
+
+    function render(index){
+        panel.innerHTML = "";
+        var ul = document.createElement("ul");
+        panel.appendChild(ul);
+        
+        for(var i = 0;i<data[index].members.length;i++){
+            var li = document.createElement("li");
+            ul.appendChild(li);
+            var span = document.createElement("span");
+            var good = data[index].members[i];
+            span.textContent = good.tag;
+            
+            if(!good.tag){
+                span.classList.add("hidden");
+            }
+            li.appendChild(span);
+            var br = document.createElement("br");
+            li.appendChild(br);
+            var img = document.createElement("img");
+            img.src = good.pic;
+            li.appendChild(img);
+            var h5 = document.createElement("h5");
+            h5.textContent = good.name;
+            li.appendChild(h5);
+            var p = document.createElement("p");
+            p.textContent = good.price;
+            li.appendChild(p);
+        }
+    }
+
+</script>
+
+</html>

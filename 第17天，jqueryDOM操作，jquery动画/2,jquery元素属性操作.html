@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style lang="">
+        .box{
+            width: 50px;
+            height: 50px;
+            border: solid 1px black;
+        }
+
+        .green{
+            background-color: green;
+        }
+
+    </style>
+</head>
+<body>
+    <ul id="list">
+        <li class="item">1</li>
+        <li class="item">2</li>
+        <li class="item">3</li>
+    </ul>
+
+    <p id="par"></p>
+
+    <div class="box" style="width:100px">hello</div>
+    <div class="box"></div>
+
+    <a href="" id="link" target="_blank">百度一下</a>
+
+    <input type="text" id="account">
+
+    <div id="d3"></div>
+
+</body>
+
+<script src="jquery.js"></script>
+<script>
+
+    // jquery对象拥有一些方法，可以对自己内部的元素对象进行操作，这些方法如果是设置、修改元素，则针对jquery容器中的每一个元素，如果是获取元素的某个值，则一般针对jquery容器中第一个元素。
+
+    //--------------------------------------------
+    // jquery容器的.text()方法，可以用于设置容器中元素的内容，相当于修改了元素的textContent属性。参数就是要修改成的值。
+    // $(".item").text("你好");
+
+    //.text()方法如果不写参数，用于获取元素的内容。
+    var txt = $(".item").text();
+    console.log(txt);
+
+    //----------------------------------------------
+
+    //.html方法，写参数时使用设置，不写参数用于获取元素的innerHTML。
+    $("#par").html("<b>你好</b>");
+    console.log($("#par").html());
+
+    //---------------------------------------------
+
+    //jquery对象的css方法，写两个参数时，用于设置元素的样式，第一个参数是设置的样式名，第二个参数是样式值，类型都是字符串。这种方式设置的样式添加在行内样式中。
+    $(".box").css("background-color","red");
+
+    //css方法，当写一个参数，且参数是一个样式名字符串时，用于获取元素这个样式的值。
+    // 使用css方法获取样式值时，总是能获取优先级最高的样式值。(这点和原生元素对象的style属性不同)
+    console.log($(".box").css("width"));
+    
+    // 当需要设置多个样式时，css方法的参数可以写为一个对象，对象中以键值对的形式记录要修改的样式。
+    $(".box").css({
+        color:"blue",
+        "font-size":"20px",
+        "font-family":"楷体"
+    });
+
+    //-------------------------------------------s
+
+    //.attr方法，写两个参数时，用于设置元素的属性，第一个参数是设置的属性名，第二个参数是属性的值。可以用于设置标准属性，也可用于设置自定义属性。
+    $("#link").attr("href","http://www.baidu.com");
+
+    //.attr方法，写一个参数时，用于获取元素的某个属性值，参数就是这个属性名。
+    console.log($("#link").attr("target"));
+
+    //-----------------------------------------
+    // 对于只有属性名，没有属性值的元素属性，更适合使用prop方法。
+    // prop方法，两个参数时表示设置这个属性，第一个参数是属性名，第二个参数是一个布尔值，true表示添加这个属性，false表示移除这个属性。
+    $("#account").prop("disabled",false);
+
+    //prop方法写一个参数时，用于获取元素是否有这个属性，有则返回true,没有返回false。
+    console.log($("#account").prop("disabled"));
+
+    //--------------------------------------------
+    // jquery对象的addClass方法，用于给元素添加一个class值。
+    $("#d3").addClass("box");
+    $("#d3").addClass("green");
+    
+    //removeClass用于删除一个class值。
+    $("#d3").removeClass("green");
+
+    //toggleClass，切换一个class值，有则删除，无则添加。
+    $("#d3").toggleClass("green");
+
+</script>
+
+</html>

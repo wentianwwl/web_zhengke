@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="title"></h1>
+    <ul id="list">
+        <li class="item">1</li>
+        <li class="item">2</li>
+        <li class="item">3</li>
+    </ul>
+</body>
+
+<!-- script标签引入一个外部的js文件，实质上就是把这个js文件中的代码导入了html，如果引入了多个js文件，则相当于把这些js文件中的代码拼接在了一起，并粘贴在当前位置 -->
+
+<!-- 所以导入jquery时一定要先导入，后使用 -->
+<script src="jquery.js"></script>
+
+<script>
+    // 导入jquery之后，在全局域会增加两个变量，jQuery和$，这两个变量指向同一个对象（函数），为了不污染全局域，jquery没有增加其他全局变量。
+    // console.log(jQuery);
+    // console.log($);
+
+    // $使用更加方便，所以一般不用jQuery。
+
+    // $是一个函数，当参数不同时，实现不同的功能。
+
+    //----------------------------------------------
+
+    //当$函数的参数是一个选择器字符串时，返回值是一个jquery对象，对象中包含了页面中所有符合该选择器的元素对象。
+
+    //jquery对象是一个容器，属于类数组，其中存放着一些原生的元素对象。
+    var obj = $(".item");
+    console.log(obj);
+
+    //-----------------------------------------------
+
+    //在使用jquery进行元素查找时，一般不会使用变量记录找到的jquery对象，而是“临时用，临时找”。
+
+    $("#title")[0].textContent = "jquery";
+    $("#title")[0].style.color = "red";
+
+    //-----------------------------------------
+
+    //当$函数的参数是一个原生元素对象时，返回值是包含这个元素的juqery对象。
+
+    var list = document.getElementById("list");
+    console.log($(list));
+    
+
+</script>
+
+
+
+
+</html>

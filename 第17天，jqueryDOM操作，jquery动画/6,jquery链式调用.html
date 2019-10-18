@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title">链式调用</h1>
+</body>
+
+<script src="jquery.js"></script>
+
+<script>
+    // var d1 = $("<div></div>");
+    // d1.appendTo(document.body);
+    // d1.css("width","50px");
+    // d1.css("height","50px");
+    // d1.css("background-color","red");
+
+    //------------------------------------
+
+    // console.log($("#title"));
+
+    //jq对象中设置或修改元素的方法（例如css,text等），返回值还是这个jq对象本身，所以可以直接使用这个对象再次调用它的方法，这种调用叫做链式调用。
+
+    $("#title").css("color","blue").css("background-color","yellow");
+
+    //--------------------------------------------
+
+    $("<div id='box'></div>")
+    .appendTo(document.body)
+    .css("width","50px")
+    .css("height","70px")
+    .text("hello world")
+    .css("color","red")
+    .attr("title","这是一个div");
+
+    
+
+</script>
+
+
+</html>

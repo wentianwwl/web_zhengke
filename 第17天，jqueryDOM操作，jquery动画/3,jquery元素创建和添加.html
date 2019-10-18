@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script src="jquery.js"></script>
+
+<script>
+
+    //$函数，参数是一个html字符串时，用于创建html字符串中所表示的元素，并把它放入一个jquery对象。
+    // jq对象的appendTo方法,作用是把jq对象中所有的元素添加到一个父元素中，参数可以是原生的元素对象，也可以是jq对象。
+
+    // $("<h1>大标题</h1>").appendTo($("body"));
+    $("<h1>大标题</h1>").appendTo(document.body);
+
+    //-----------------------------
+
+    //使用jq可以一次性创建多个嵌套或并列的元素。
+    $("<ul><li>1</li><li>2</li></ul>").appendTo(document.body);
+
+    //-----------------------------------
+
+    //append，添加子元素
+    $("body").append($("<p>文本标签</p>"));
+
+</script>
+
+</html>

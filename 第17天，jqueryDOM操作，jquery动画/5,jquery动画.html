@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style lang="">
+        body{
+            margin: 0;
+        }
+        #box{
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            position: absolute;
+            left: 0;
+            top: 100px;
+        }
+    </style>
+</head>
+<body>
+    
+    <button id="hide">隐藏</button>
+    <button id="show">显示</button>
+
+    <br>
+
+    <button id="start">开始</button>
+
+    <div id="box"></div>
+
+
+
+</body>
+
+<script src="jquery.js"></script>
+
+
+<script>
+    $("#hide").on("click",function(){
+        // jq对象的hide方法，用于隐藏jq对象中所有的元素。通过display:none实现。
+        // $("#box").hide();
+
+        //.fadeOut方法，用于动画（渐隐）隐藏元素，可选的参数是动画时间，
+        // $("#box").fadeOut();
+
+        // slideUp方法，滑动隐藏。
+        $("#box").slideUp();
+    });
+
+
+    $("#show").on("click",function(){
+        // show方法,显示隐藏的元素
+        // $("#box").show();
+
+        // fadeIn()动画出现。
+        // $("#box").fadeIn();
+
+        //slideDown方法，滑动出现。
+        $("#box").slideDown();
+    });
+
+
+    $("#start").on("click",function(){
+
+        //jq对象的animate方法，用于给jq对象中所有的元素添加一个动画，第一个参数是一个对象，对象中设置元素动画结束时的状态。第二个参数是动画持续时间，第三个参数可选，动画速率，第四个参数是动画结束时的回调函数。
+        $("#box").animate({
+            left:"200px",
+            top:"150px",
+        },1000,"linear",function(){
+            alert("动画结束");
+        });
+    });
+
+</script>
+
+</html>
