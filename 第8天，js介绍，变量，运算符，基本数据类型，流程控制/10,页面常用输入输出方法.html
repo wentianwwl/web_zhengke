@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    // console.log()
+    // document.write();
+
+    // 弹出对话框
+    // alert("你好");
+
+    // confirm，确认框，会返回一个布尔值，点确定返回true,点取消返回false;
+    var result = confirm("可以做我女朋友吗？");
+
+    // prompt，带输入框的提示框，以字符串的形式返回输入框中的内容。
+    var income = prompt("你的月薪是多少？");
+
+    if(income*1>10000){
+        alert("可以");
+    }
+
+
+    var res = confirm("我长得帅吗？");
+    while(res==false){
+        alert("回答错误");
+        res = confirm("我长得帅吗？");
+    }
+    alert("回答正确");
+
+
+</script>
+
+</html>

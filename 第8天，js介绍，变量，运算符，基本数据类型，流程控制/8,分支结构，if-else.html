@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    // if-else用于设计分支结构代码。
+    // 具体格式:
+    //if(条件){代码块1}else{代码块2}
+    // 规则：条件是一个布尔值或布尔表达式，如果为true则执行代码1，如果为false则执行代码2
+
+    // {}中多若干行代码， 成为一个代码块。
+
+    var n1 = 8;
+    var n2 = 12;
+
+    if(n1 > n2){
+        console.log(n1);
+    }else{
+        console.log(n2);
+    }
+
+    // if语句，可以没有else
+    var isEated = true;
+    if(isEated){
+        console.log("吃的什么？");
+    }
+
+    //if语句，可以连续使用if..else if..else if..else
+    
+    var age = 5;
+    if(age<1){
+        console.log("婴儿");
+    }else if(age<7){
+        console.log("儿童");
+    }else if(age<12){
+        console.log("少年");
+    }else if(age<23){
+        console.log("青年");
+    }else if(age<50){
+        console.log("中年");
+    }else{
+        console.log("老年");
+    }
+
+    // if-else可以嵌套使用。
+
+    age = 30;
+    var gender = "男";
+    
+    if(gender=="男"){
+        if(age>30){
+            console.log("符合条件");
+        }else{
+            console.log("男性必须在30岁以上");
+        }
+    }else{
+        if(age>25){
+            console.log("符合条件");
+        }else{
+            console.log("女性必须在25岁以上");
+        }
+    }
+
+
+</script>
+
+
+</html>

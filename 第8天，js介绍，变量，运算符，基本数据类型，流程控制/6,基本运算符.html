@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+
+    // =  赋值运算符。把=右侧的值或表达式赋给=左侧的变量。
+
+    //----------------------------------------
+    // + 运算符
+    // + 可以用于计算两个数字类型数据之和。
+    var num1 = 3;
+    var num2 = 5;
+    var num3 = num1+num2;
+    console.log(num3);
+    // +可以连续使用
+    var num4 = 4+6+2+8;
+
+    // 当+用于字符串时，效果是字符串拼接。
+    var str1 = "3";
+    var str2 = "5";
+    var str3 = str1+str2;
+    console.log(str3);
+
+    // 当+两侧一侧是数字，一侧是字符串时，会将数字强制转为字符串，然后进行字符串拼接。
+    var num5 = 3;
+    var str5 = "5";
+    var v = num5+str5;
+    console.log(v);
+
+    // typeof运算符，用于获取一个变量所记录的数据的类型(只能用于基本类型判断)。
+    console.log(typeof num5);
+    console.log(typeof v);
+
+    //---------------------------------------------
+
+    // - 运算符
+    // -可用于数字类型的减法计算。
+    var num6 = 5 - 2;
+    
+    // - 两侧任意一侧不是数字时，都会将这一侧强制转为数字，然后进行数字减法计算（前提是这个字符串能被转为数字，否则会出现NaN，not a number）
+    var num7 = "10"-"6";
+    console.log(num7);
+
+    //------------------------------------------
+    // * 乘法运算符，可用于两个数字类型的乘法计算
+    var num8 = 4 * 6;
+
+    // * 用于字符串时，规律和-相同。
+    var num9 = "4"*"6";
+
+    //-----------------------------------------
+
+    //  /  除法运算符，用于两个数字类型的除法计算。
+    var num10 = 5/3;
+    console.log(num10);
+    //  用于字符串时，规律和-相同。
+
+    //---------------------------------------
+
+    // % 取余运算符，用于计算两个数字相除之后的余数。
+    var num11 = 5 % 3;
+    console.log(num11);
+
+    //如果要使用整除取商，需要使用 / 获得小数的结果之后再向下取整。
+    var num12 = Math.floor(5 / 3);
+
+    //--------------------------------------------
+
+    var num13 = 3;
+    // ++ ,自增运算符，使变量的值自增1.
+    num13++;
+    //相当于num13 = num13+1;
+    console.log(num13);
+
+    //--用于自减。
+    //-----------------------------------------
+
+    // += 用于自增n
+    var num14 = 10;
+    // num14 = num14 + 5;
+    num14 += 5;
+    console.log(num14)
+
+    // 还有-=,*=,/=
+    // a *= 4 相当于a = a * 4;
+
+    // ---------------------------------------
+
+    // 不同的运算符有不同的优先级，高优先级的运算符先执行计算。
+    // 乘除优先级大于加减
+    var num15 = 3 + 5 * 2;
+
+    //----------------------------------------
+    //比较运算符。
+
+    // a>b ，判断a是否大于b，结果是一个布尔值，成立则为true，不成立为false;
+    var flag1 = 5>3;
+    console.log(flag1);
+
+    //还有 <小于 , >=大于等于 , <=小于等于
+    // 当以上运算符用于字符串时，参照-
+
+    var num16 = 10;
+    var num17 = 10;
+    // == 用于判断两个值是否相等。
+    var flag2 = num16 == num17;
+    console.log(flag2);
+
+    // != 判断两个值是否不相等
+    var flag3 = num16 != num17;
+    console.log(flag3);
+
+
+    // 当 == 用于字符串判断时，表示判断两个字符串的内容是否相等
+    console.log("123"=="123");
+    
+    // 当 == 两侧类型不同时，强制转为字符串进行对比，也就是说==智能判断两个数据的值是否相等。
+    console.log(123=="123");
+
+    // === ，值和类型都相等才算相等。
+    console.log(123==="123");
+
+    //----------------------------------------------
+    //逻辑运算符
+    // &&(与) , ||(或) , !(非)
+
+    //&& 表示 and（并且）。
+    // true&&true    true
+    // true&&false   false
+    // false&&false  false
+
+    // || 表示or （或者）
+    // true||true    true
+    // true||false   true
+    // false||false  false 
+
+    // ! 表示not （非）
+    // !true    false
+    // !false   true
+
+
+    var num20 = 15;
+    // 判断num20 是否在5到10之间
+    console.log(10>num20&&num20>5);
+
+    console.log(num20<10||num20>20);
+
+    
+</script>
+
+</html>

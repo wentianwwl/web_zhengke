@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    //for 循环语句，用于实现循环结构代码。
+    //具体格式：
+
+    // for(声明循环控制变量并赋初值;循环条件;单次循环结束语句){代码块}
+
+    // 执行流程：
+    // 1,声明循环控制变量并赋初始值。
+    // 2,判断循环条件是否成立，如果不成立则直接退出循环。如果成立。则执行代码块。
+    // 3,代码块执行完毕后。执行单次循环结束语句（一般为循环控制变量修改）。
+    // 4，回到第2步。
+
+    for(var i = 0;i<5;i++){
+        // console.log("你好");
+    }
+
+
+    // 循环体中可以使用循环控制变量
+    for(var i = 4;i<=8;i++){
+        // console.log(i);
+    }
+
+    // 使用for循环时，注意循环条件和循环控制变量的修改，保证这个循环是可以退出的，否则会出现死循环。
+    // for(var i = 0;i<3;i--){
+    //     console.log("死循环");
+    // }
+
+    
+    // for循环可以嵌套使用。
+    // 两层循环时（循环次数固定），里层循环的最终执行次数等于外层循环次数*里层循环次数。
+
+    for(var i = 0;i<10;i++){
+        for(var j=0;j<10;j++){
+            // console.log(i);
+            // console.log(j);
+            console.log(i*10+j);
+        }
+    }
+
+    // 里层循环的循环条件，可以使用外层循环的循环控制变量设置，这样可以达到里层循环动态次数效果。
+    for(var i = 0;i<10;i++){
+        for(var j = 0;j<=i;j++){
+            document.write("*");
+        }
+        document.write("<br>");
+    }
+
+
+</script>
+
+</html>
+

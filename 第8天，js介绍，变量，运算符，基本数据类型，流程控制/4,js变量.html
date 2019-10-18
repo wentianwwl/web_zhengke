@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- pre标签中的内容会按照原格式显示，多余的空格和回车都不会删除 -->
+    <!-- <pre>
+        尊敬的领导：
+            我是孙化育，我明天要。。。。
+                            此致
+                                敬礼
+    </pre> -->
+    
+</body>
+
+<script>
+    // 变量，用于记录一个数据的值。
+    // 声明变量的格式：
+    // var 变量名;
+    // (每行代码结束后，可以添加一个;也可以不添加，大部分传统语言，c,c++,java等，要求每行代码结束后必须添加;js保留了这个习惯，但是又认为没有必要加; 可以通过回车表示一行代码结束，所以可以不加分号，js官方也推荐不加;，但是为了以后学习其他语言，养成加;的习惯比较好)
+    var abc;
+
+    //变量名的格式要求：不能是js中的关键字（例如var,if,for等），不能以数字开头，不能包含js中的运算符(例如+,-等)。
+
+    // 变量名的规范：不要使用abc,a1,a2,a3,a,b这种简单，语义不清晰的字母作为变量名，最好也不要使用拼音做变量名，根据这个变量索要记录的数据的类型起名字，例如，这个数据记录的是一个人的年龄，那么就叫age，记录的是一个颜色就叫color。
+    // 变量使用小写字母，当变量名中有两个或以上的单词时，使用小驼峰命名法(第一个单词全小写，第二个单词开始，每个单词的首字母大写)，例如myAge,myBestFriend。
+    
+
+    // 变量可以记录一个数据。
+    // abc=3是一条赋值语句，将=右侧的值赋给等号左侧的变量。这个变量就记录了这个值。
+    abc = 3;
+
+    // 使用一个变量时，实际上是获得了它所记录的值。
+    console.log(abc);
+
+    // 在声明变量时可以直接赋值
+    var myAge = 18;
+    // 变量之间可以相互赋值
+    abc = myAge;
+    console.log(abc);
+
+    // 赋值语句=右侧也可以是一个表达式
+    // 表达式：由多个运算符和数据（变量）连接成的式子，可以计算出一个具体值。
+    abc = 3+5+myAge;
+    
+
+    // document.write ,输出一段内容到页面（不换行）
+    // document.writeln ，输出一段内容到页面并换行。
+
+    document.writeln("<pre>");
+    document.write("1");
+    document.writeln("2");
+    document.write("3");
+    document.writeln("4");
+    document.writeln("</pre>");
+
+
+    
+
+</script>
+
+</html>
