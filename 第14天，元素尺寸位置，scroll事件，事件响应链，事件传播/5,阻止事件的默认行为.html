@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <a href="http://www.baidu.com" id="link">百度一下</a>
+</body>
+
+
+<script>
+    // 对于某些元素的某些特殊事件，即使不监听，浏览器本身也会触发一系列代码执行，例如，点击a标签时页面会跳转，按下f5时，页面会刷新，这些叫做浏览器的默认行为。
+
+    var link = document.getElementById("link");
+
+    link.onclick = function(e){
+        //通过事件对象的preventDefault()方法，可以阻止本次事件所触发的浏览器默认行为。
+        e.preventDefault();
+    }
+
+
+    document.body.onkeypress = function(e){
+        if(e.keyCode==116){
+            e.preventDefault();
+        }
+    }
+    
+
+</script>
+
+
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    
+</body>
+
+<script>
+    var table = document.createElement("table");
+    document.body.appendChild(table);
+    for(var i = 0;i<6;i++){
+        var tr = document.createElement("tr");
+        table.appendChild(tr);
+        for(var j = 0;j<8;j++){
+            var td = document.createElement("td");
+            tr.appendChild(td);
+            td.innerHTML = "第"+(i+1)+"行，第"+(j+1)+"列";
+        }
+    }
+    
+    
+    var arr = ["河南","河北","山东","山西"];
+
+    var select = document.createElement("select");
+
+    document.body.appendChild(select);
+
+    arr.forEach(function(e){
+        var opt = document.createElement("option");
+        select.appendChild(opt);
+        opt.innerHTML = e;
+    });
+
+    // for(var i = 0;i<arr.length;i++){
+    //     var opt = document.createElement("option");
+    //     select.appendChild(opt);
+    //     opt.innerHTML = arr[i];
+    // }
+
+
+
+
+</script>
+
+
+</html>

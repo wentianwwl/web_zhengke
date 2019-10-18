@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 400px;
+            height: 300px;
+            /* border: solid 1px black; */
+            overflow: scroll;
+        }
+
+        .red{
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="box">
+        <p>当页面或元素滚动时，也会触发事件</p>
+        <p>当页面或元素滚动时，也会触发事件</p>
+        <p>当页面或元素滚动时，也会触发事件</p>
+        <p>当页面或元素滚动时，也会触发事件</p>
+        <p>当页面或元素滚动时，也会触发事件</p>
+        <p>当页面或元素滚动时，也会触发事件</p>
+        <p>当页面或元素滚动时，也会触发事件</p>
+        <p>当页面或元素滚动时，也会触发事件</p>
+        <p>当页面或元素滚动时，也会触发事件</p>
+        <p>当页面或元素滚动时，也会触发事件</p>
+        <p>当页面或元素滚动时，也会触发事件</p>
+        <p>当页面或元素滚动时，也会触发事件</p>
+        <p>当页面或元素滚动时，也会触发事件</p>
+        <p>当页面或元素滚动时，也会触发事件</p>
+        <p>当页面或元素滚动时，也会触发事件</p>
+    </div>
+    <input type="number" id="offset">
+    <button id="btn">滚动到</button>
+    <button id="btn-by">滚动多少</button>
+
+    <p>当页面或元素滚动时，也会触发事件</p>
+    <p>当页面或元素滚动时，也会触发事件</p>
+    <p>当页面或元素滚动时，也会触发事件</p>
+    <p>当页面或元素滚动时，也会触发事件</p>
+    <p>当页面或元素滚动时，也会触发事件</p>
+    <p>当页面或元素滚动时，也会触发事件</p>
+    <p>当页面或元素滚动时，也会触发事件</p>
+    <p>当页面或元素滚动时，也会触发事件</p>
+    <p>当页面或元素滚动时，也会触发事件</p>
+    <p>当页面或元素滚动时，也会触发事件</p>
+    <p>当页面或元素滚动时，也会触发事件</p>
+    <p>当页面或元素滚动时，也会触发事件</p>
+    <p>当页面或元素滚动时，也会触发事件</p>
+    <p>当页面或元素滚动时，也会触发事件</p>
+    <p>当页面或元素滚动时，也会触发事件</p>
+    <p>当页面或元素滚动时，也会触发事件</p>
+    <p>当页面或元素滚动时，也会触发事件</p>
+    <p>当页面或元素滚动时，也会触发事件</p>
+    <p>当页面或元素滚动时，也会触发事件</p>
+    <p>当页面或元素滚动时，也会触发事件</p>
+    <p>当页面或元素滚动时，也会触发事件</p>
+</body>
+
+<script>
+    var box = document.getElementById("box");
+
+    //onscroll,滚动事件，当元素发生内容滚动时触发，属于频繁触发的事件。
+    box.onscroll = function(e){
+        //元素本身高度
+        console.log(this.clientHeight);
+
+        //scrollHeight，元素的内容高度。
+         console.log(this.scrollHeight);
+
+        // scrollTop，纵向滚动偏移量
+        console.log(this.scrollTop);
+
+        if(this.scrollTop>this.scrollHeight-this.clientHeight-50){
+            this.classList.add("red");
+        }else{
+            this.classList.remove("red");
+        }
+
+        offset.value = this.scrollTop;
+    }
+
+    var btn = document.getElementById("btn");
+    var offset = document.getElementById("offset");
+
+    btn.onclick = function(){
+        //输入框的value属性，表示输入框中输入的内容
+        var top = offset.value;
+        // console.log(top);
+
+        // scrollTo方法，或者直接设置scrollTop属性，可以设置元素的滚动偏移量。
+        // box.scrollTo(0,100);
+        box.scrollTop = top;
+    }
+
+
+    btnBy = document.getElementById("btn-by");
+
+    btnBy.onclick = function(){
+        // scrollBy，在当前滚动偏移量的基础上滚动多少。
+        box.scrollBy(0,-10);
+    }
+
+
+    //对于整个页面的滚动，监听document的scroll事件。
+    document.onscroll = function(e){
+        console.log("页面滚动了");
+    }
+
+
+</script>
+
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #main{
+            width: 500px;
+            margin: 0 auto;
+            border: solid 2px cyan;
+            text-align: center;
+            padding-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <h1 id="content">00:00:000</h1>
+        <div>
+            <button onclick="startClick(event)">开始</button>
+            <button id="division">分隔</button>
+            <button onclick="reset()">重置</button>
+        </div>
+    </div>
+</body>
+
+<script>
+    var total = 0;
+    var h1 = document.getElementById("content");
+    var main = document.getElementById("main");
+
+    var timer;
+
+    function startClick(e){
+
+        if(e.target.innerHTML=="开始"){
+            e.target.innerHTML = "暂停";
+            timer = setInterval(function(){
+                total+=41;
+                h1.innerHTML = msToMinute(total);
+            },41);
+        }else{
+            e.target.innerHTML = "开始";
+            clearInterval(timer);
+            timer = null;
+        }
+
+    }
+
+    function msToMinute(msecond){
+        var ms = msecond%1000;
+        var second = Math.floor(msecond/1000);
+        var minute = Math.floor(second/60);
+        second = second%60;
+        minute = minute<10?"0"+minute:minute;
+        second = second<10?"0"+second:second;
+
+        if(ms<10){
+            ms = "00"+ms;
+        }else if(ms<100){
+            ms = "0"+ms;
+        }
+
+        // ms = ms<10?"00"+ms:(ms<100?"0"+ms:ms);
+
+        return minute+":"+second+":"+ms;
+    }
+    
+
+    var division = document.getElementById("division");
+    division.onclick = function(){
+        if(timer){
+            var h2 = document.createElement("h2");
+            h2.innerHTML = msToMinute(total);
+            main.appendChild(h2);
+        }
+    }
+
+    
+
+    function reset(){
+        if(timer){
+            clearInterval(timer);
+            timer = null;
+        }
+        total = 0;
+        h1.innerHTML = "00:00:000";
+        var h2s = document.querySelectorAll("#main h2");
+        for(var i = 0;i<h2s.length;i++){
+            main.removeChild(h2s[i]);
+        }
+
+    }
+
+    
+
+</script>
+
+
+</html>

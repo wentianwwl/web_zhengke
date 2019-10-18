@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style lang="">
+        #box{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+
+    </div>
+</body>
+
+<script>
+    var box = document.getElementById("box");
+
+    //onmouseenter，鼠标指针进入元素时触发。
+    box.onmouseenter = function(){
+        console.log("鼠标进入了");
+    }
+
+    //onmouseleave，鼠标指针离开元素时触发。
+    box.onmouseleave = function(){
+        console.log("鼠标离开了");
+    }
+	box.onmousedown = function (){
+	        console.log("aaaaaaaa");
+
+	}
+	
+</script>
+
+</html>

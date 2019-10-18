@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style lang="">
+
+        #out{
+            height: 200px;
+            /* border: solid 1px black; */
+            margin: 50px;
+            background-color: bisque;
+        }
+        #box{
+            width: 100px;
+            height: 50px;
+            background-color: aqua;
+            padding: 10px;
+            border: solid 5px black;
+            margin: 0px 40px;
+            position: relative;
+            top: 30px;
+            /* box-sizing: border-box; */
+        }
+    </style>
+</head>
+<body>
+    <div id="out">
+        <div id="box"></div>
+    </div>
+    
+</body>
+
+<script>
+    
+    var box = document.getElementById("box");
+
+    //元素对象.offsetWidth属性和offsetHeight属性，分别表示元素的宽度和高度（按边框算），单位是像素。
+    // console.log(box.offsetWidth);
+    // console.log(box.offsetHeight);
+
+    // clientWidth,clientHeight，获取元素的宽高，只计算到内间距，不带边框。
+    // console.log(box.clientWidth);
+    // console.log(box.clientHeight);
+
+    //offsetLeft和offsetTop，获取元素相对于窗口的x横坐标和y纵坐标。
+    console.log(box.offsetLeft);
+    console.log(box.offsetTop);
+    
+    console.log(box.clientLeft);
+    console.log(box.clientTop);
+
+    //以上属性都是只读的。
+
+    //一个元素的坐标 减去 它父元素的坐标，就等于它在父元素中的坐标。
+</script>
+
+</html>

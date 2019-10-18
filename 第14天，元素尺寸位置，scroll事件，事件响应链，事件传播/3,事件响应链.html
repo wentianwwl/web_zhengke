@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style lang="">
+        #outer{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+        #inner{
+            width: 50px;
+            height: 50px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div id="outer">
+        <div id="inner"></div>
+    </div>
+</body>
+
+<script>
+    var inner = document.getElementById("inner");
+    var outer = document.getElementById("outer");
+
+    //一个事件触发之后，window（浏览器）先接收到事件，然后依次往下传递给document的子元素，这个过程叫做捕获阶段。事件到达最终子元素之后，会按照原顺序依次向上传递，最终到达window，这个过程叫做冒泡阶段。
+
+
+    //使用html属性和元素对象的on.....方法添加的事件监听，都是在事件的冒泡阶段进行的监听。
+    
+    inner.onclick = function(e){
+        console.log("黄色div点击了");
+        e.stopPropagation();
+    }
+
+    outer.onclick = function(e){
+        console.log("红色div点击了");
+        e.stopPropagation();
+    }
+
+    document.body.onclick = function(){
+        console.log("body被点击了");
+    }
+
+</script>
+
+</html>

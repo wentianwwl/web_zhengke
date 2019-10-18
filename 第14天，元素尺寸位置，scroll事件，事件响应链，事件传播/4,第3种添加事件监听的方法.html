@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style lang="">
+        #outer{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+        #inner{
+            width: 50px;
+            height: 50px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div id="outer">
+        <div id="inner"></div>
+    </div>
+</body>
+
+<script>
+    var inner = document.getElementById("inner");
+    var outer = document.getElementById("outer");
+
+    // addEventListener，为元素添加一个事件监听。第一个参数是监听的事件类型，第二个参数是听到事件时所调用的函数（事件绑定的函数），第三个参数是一个布尔值，true表示在捕获阶段监听，false表示在冒泡阶段监听，默认为false。
+    //addEventListener，可以为同一个元素的同一种事件添加多个监听函数。
+
+    inner.addEventListener("click",function(e){
+        console.log("黄色div，捕获阶段");
+    },true);
+
+    inner.addEventListener("click",function(e){
+        console.log("黄色div，冒泡阶段");
+    },false);
+
+    outer.addEventListener("click",function(e){
+        console.log("红色div，捕获阶段");
+
+        // 通过事件对象event的stopPropagation()方法，可以阻止事件的传播。可以在事件响应链的任何一个环节阻止事件传播。
+        // e.stopPropagation();
+    },true);
+
+    outer.addEventListener("click",function(e){
+        e.stopPropagation();
+        console.log("红色div，冒泡阶段");
+    },false);
+
+    document.body.addEventListener("click",function(e){
+        console.log("body，捕获阶段");
+    },true);
+
+    document.body.addEventListener("click",function(e){
+        console.log("body，冒泡阶段");
+    },false);
+
+</script>
+
+</html>
