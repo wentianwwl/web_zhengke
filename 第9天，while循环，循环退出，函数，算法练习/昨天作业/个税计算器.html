@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+
+    var salary = prompt("请输入您的税前工资");
+
+    salary = salary*1;
+
+    if(salary<=3500){
+        alert("不需要交税");
+    }else{
+        var tax = 0;
+        var ynse = salary - 3500;
+        if(ynse<=1500){
+            tax = ynse*0.03;
+        }else if(ynse<=4500){
+            tax = ynse*0.1-105;
+        }else if(ynse<=9000){
+            tax = ynse*0.2-555;
+        }else if(ynse<=35000){
+            tax = ynse*0.25-1005;
+        }else if(ynse<=55000){
+            tax = ynse*0.3-2755;
+        }else if(ynse<=80000){
+            tax = ynse*0.35-5505;
+        }else{
+            tax = ynse*0.45-13505;
+        }
+        alert("应纳个人所得税"+tax+"元");
+    }
+
+</script>
+
+
+</html>

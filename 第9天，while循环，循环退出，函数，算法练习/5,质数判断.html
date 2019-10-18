@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    var num = prompt("请输入一个正整数");
+
+    num = num*1;
+
+    if(num==2){
+        console.log("是质数");
+    }
+
+    if(num==1){
+        console.log("不是质数");
+    }
+
+    // 最基本的方法。
+
+    // for(var i = 2;i<num;i++){
+    //     if(num%i==0){
+    //         console.log("不是质数，能被"+i+"整除");
+    //         break;
+    //     }
+
+    //     if(i==num-1){
+    //         console.log("是质数");
+    //     }
+    // }
+
+    //------------------------------------------------------------
+
+    var isPrime = true;
+
+    for(var i = 2;i<num;i++){
+        if(num%i==0){
+            isPrime = false;
+            break;
+        }
+    }
+
+    // if(isPrime) 相当于 if(isPrime==true)
+    // if(!isPrime) 相当于 if(isPrime==false)
+
+    if(isPrime){
+        console.log("是质数");
+    }else{
+        console.log("不是质数");
+    }
+
+    //开方计算
+    // console.log(Math.sqrt(9));
+
+</script>
+
+</html>

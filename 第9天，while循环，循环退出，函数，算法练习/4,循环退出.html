@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+
+    // 在for循环和while的循环体中，可以使用break,直接退出循环。
+
+    // for(var i = 0;i<10;i++){
+    //     console.log(i);
+    //     if(i==4){
+    //         break;
+    //     }
+    // }
+
+    //-------------------------------------------------
+
+    // var number = Math.floor(Math.random()*100)+1;
+
+    // for(var i = 0;i<7;i++){
+    //     var guess = prompt("请猜测一个1-100的数字");
+
+    //     if(guess>number){
+    //         alert("猜大了");
+    //     }else if(guess<number){
+    //         alert("猜小了");
+    //     }else{
+    //         alert("猜对了");
+    //         break;
+    //     }
+    //     alert("你还有"+(6-i)+"次机会");
+    // }
+
+    //-------------------------------------------------
+
+    //break,只能退出当前层次循环。
+
+    // for(var i = 0;i<10;i++){
+    //     for(var j = 0;j<10;j++){
+    //         console.log(j);
+    //         if(j==4){
+    //             break;
+    //         }
+    //     }
+    //     if(i==6){
+    //         break;
+    //     }
+    // }
+
+    //-------------------------------------------------
+
+    // 如果break需要退出外层的循环，需要给外层循环起一个名字，然后在break后写上要退出的循环的名字。
+    loop1: 
+    for(var i = 0;i<6;i++){
+        for(var j = 0;j<6;j++){
+            console.log(j);
+            if(j==4){
+                break loop1;
+            }
+        }
+    }
+
+    //-------------------------------------------------
+    //break也可用于while循环退出。
+
+    //1+2+3+4......+n >10000
+    //n最小为几
+
+    var sum = 0;
+    var currentNum = 0;
+    while(true){
+        currentNum++;
+        sum+=currentNum;
+        if(sum>10000){
+            break;
+        }
+    }
+    console.log(sum);
+    console.log(currentNum);
+
+    //------------------------------------------------
+
+
+    // continue,用于立刻结束循环体，准备下次循环（结束本次循环）。
+
+    // for(var i = 0;i<10;i++){
+    //     if(i==4){
+    //         continue;
+    //     }
+    //     console.log(i);
+    // }
+
+    //偶数判断
+    // var n = 5;
+    // if(n%2==0){
+    //     alert("偶数");
+    // }else{
+    //     alert("奇数");
+    // }
+
+    //求20以内所有奇数的平方
+
+    console.log("--------------------------------");
+
+    for(var i = 0;i<20;i++){
+        if(i%2==0){
+            continue;
+        }
+
+        console.log(Math.pow(i,3));
+    }
+
+
+</script>
+
+
+</html>

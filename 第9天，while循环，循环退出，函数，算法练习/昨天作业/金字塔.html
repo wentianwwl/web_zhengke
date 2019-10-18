@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style lang="">
+        body{
+            font-family: 黑体;
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+
+<script>
+    // 1,3,5,7,9
+
+    // 0,4
+    // 1,3
+    // 2,2
+    // 3,1
+    // 4,0
+
+    var height = 10;
+
+    for(var i = 0;i<height;i++){
+
+        for(var j = 0;j<height-1-i;j++){
+            document.write("&nbsp;");
+        }
+
+        for(var j = 0;j<i*2+1;j++){
+            document.write("*");
+        }
+        document.write("<br>");
+    }
+
+    document.writeln("<pre>");
+
+    for(var i = 1;i<=9;i++){
+        for(var j = 1;j<=i;j++){
+            document.write(j+"*"+i+"="+i*j+"\t");
+        }
+
+        document.write("\n");
+    }
+
+    document.writeln("</pre>");
+
+    // ascii转译字符，字符串中不能直接输入一些字符，例如回车，双引号，单引号等，如果在字符串中需要写这些特殊字符，要用\ 进行转译。
+    //    \n   回车
+    //    \"   "
+    //    \\   \
+    //    \t   一个缩进
+    // console.log("\"");
+
+
+
+</script>
+
+</html>

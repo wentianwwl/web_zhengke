@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+
+    // Math.random(); 生成一个[0,1)的随机数字。
+
+    var num1 = Math.random();
+    console.log(num1);
+
+
+    // 可以通过乘以一个数字n，扩大随机范围
+    // var num2 = Math.random()*100;
+    var num2 = Math.random();
+    num2*=100;
+    console.log(num2);
+
+    // Math.floor，向下取整。
+    num2 = Math.floor(num2)+1;
+
+    console.log(num2);
+
+    // 可以通过加上一个数设置偏移量。
+    // 生成5-10的随机数。
+    Math.random()*5+5;
+
+
+    //---------------------------------------------------------
+
+    //先随机生成一个[1,100]的随机数字。
+    var number = Math.floor(Math.random()*100)+1;
+
+    var guess;
+
+    do {
+        guess = prompt("请猜测一个1-100的整数");
+
+        if(guess>number){
+            alert("猜大了，请再试一次");
+        }else if(guess<number){
+            alert("猜小了，请再试一次");
+        }
+        
+    } while (number!=guess);
+
+    alert("猜对了");
+
+</script>
+
+
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    
+    // 如果某一段代码在不同的地方需要重复多次使用，那么可以把这段代码写在一个函数中。在需要执行这段代码的地方调用这个函数。
+
+    // 函数声明格式：
+    // function 函数名(参数列表){函数体}
+    // 函数名的命名规则和变量相同（小驼峰）
+
+    function printSeperator(){
+        console.log("**********************");
+        console.log("**我是一条华丽的分割线**");
+        console.log("**********************");
+    }
+    
+
+    // 声明一个函数后，函数体中的代码并不执行。函数体中的代码在调用时执行。
+    // 函数调用格式：
+    // 函数名(参数列表);
+    // 一个函数可以在任何地方多次调用。
+    printSeperator();
+
+    //---------------------------------------------------------------
+    
+    //一个函数可以有参数。
+    // 计算两个数字之和并打印 的函数。
+    function add(n1,n2){
+        console.log(n1+n2);
+    }
+
+    //带参数的函数在调用时需要传递参数（传参）。
+    add(1,5);
+    add(3,8);
+
+    //--------------------------------------------------------------
+
+    // 函数可以有返回值。
+    // 计算两个数之积并返回这个积。
+    function times(a,b){
+        // return a*b;
+
+        // return,用于返回一个值（函数的返回值）。
+        var product = a*b;
+        return product;
+    }
+
+    // 拥有返回值的函数，可以认为是一个表达式，表达式的值就是函数执行时的返回值。
+    var p = times(3,4);
+    console.log(p);
+
+    //-----------------------------------------------------------
+
+    // return 语句会直接结束函数。(return用于返回一个值并直接退出函数，返回的值可以为空)
+
+    function f1(){
+        console.log(1);
+        console.log(2);
+        return;
+        console.log(3);
+        console.log(4);
+    }
+
+    f1();
+
+    //------------------------------------------------------------
+
+    // 一个函数中可以调用另一个函数。
+
+    function f2(){
+        console.log("函数2");
+        f3();
+        console.log("abc");
+    }
+
+    function f3(){
+        console.log("函数3");
+    }
+
+    f2();
+
+    // --------------------------------------------------------
+
+    
+
+
+</script>
+
+</html>

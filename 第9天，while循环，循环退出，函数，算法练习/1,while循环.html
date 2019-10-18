@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    // for循环常用于循环次数已知或循环次数可以确定的循环，对于循环次数无法确定，需要已知循环到某个条件成立为止的循环，更适合使用while循环。
+
+    // while循环格式
+    // while(条件){循环体}
+    // 执行流程：
+    //1,判断循环条件是否成立，不成立直接退出循环，成立则执行循环体。
+    //2,循环体执行完毕后，回到第1步。
+
+    // var salary = prompt("请输入工资");
+    // salary = salary*1;
+
+    // while(!salary||salary<0){
+    //     salary = prompt("输入格式有误，请重新输入");
+    //     salary = salary*1;
+    // }
+    
+    // alert("您的工资是"+salary);
+
+
+    // var i = 0;
+
+    // while(i<10){
+    //     console.log(i);
+    //     i++;
+    // }
+
+
+    // do.....while循环，
+    // 格式：
+    // do{循环体}while(条件)
+    // 执行流程：先执行一次循环体，然后判断条件是否成立，如果不成立则退出循环，成立则再次执行循环体，然后再次判断。。。。。。。。
+
+    var sum = 0;
+
+    do {
+        var n = prompt("请输入一个数字");
+        n = n*1;
+        sum+=n;
+    } while (sum<100);
+    
+
+</script>
+
+</html>

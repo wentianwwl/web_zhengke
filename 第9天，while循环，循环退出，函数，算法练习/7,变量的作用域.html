@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    // 作用域：变量的使用范围。
+
+    // 直接在script标签中声明的变量，处于同一个作用域，叫做全局域，这些变量叫做全局变量(global variable)。
+
+    var g1 = 3;
+    var g2 = "你好";
+
+    // 声明一个函数时，函数体内部会形成一个新的作用域，这个作用域叫做局部作用域，在这个作用域中声明的变量叫做这个函数的局部变量(local variable)。
+    function f1(){
+        var l1 = 5;
+        var l2 = "hello";
+    }
+
+
+    function f2(){
+        // 在局部作用域中，可以使用全局变量。
+        // console.log(g1);
+        var l3 = "这是局部变量";
+    }
+    f2();
+
+    // 在全局域中，不能使用局部变量。
+    // console.log(l3);
+
+    // 函数外部定义的变量，函数内部可以使用；函数内部定义的标量，函数外部不能使用。
+
+    //-------------------------------------------------------------
+
+    var age = 26;
+    function f3(){
+        // 局部作用域变量会覆盖全局作用域变量（当局部作用域和全局作用域有相同的变量名时，局部作用域会优先使用局部变量）。
+        var age = 40;
+        console.log(age);
+    }
+    f3();
+
+
+    // 周末作业：(利用函数)
+    //1,输入一个年份，判断是否是闰年。
+    //2,找出10000以内所有质数(不要用循环嵌套，利用函数)。
+    //3,写一个函数，用于计算排列和组合。例如
+    //function pailie(a,b){....}
+    //pailie(5,3) 要得到10;
+    
+
+
+
+</script>
+
+</html>
