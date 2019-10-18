@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+	<div id="v1"></div></div>
+
+    <ul id="list">
+        <li class="item first">1</li>
+        <li class="item">2</li>
+        <li class="item">3</li>
+    </ul>
+    <div class="item"></div>
+
+
+</body>
+
+<script>
+    //对于页面中的特殊标签，可以直接使用document的属性获取。例如html标签，body标签。
+
+    //document.documentElement获得html元素对象。
+    console.log(document.documentElement);
+
+    //document.body获得body对象
+    console.log(document.body);
+
+
+    //通过document还可以设置页面的一些属性，例如标题title。
+    console.log(document.title);
+    document.title = "元素查找";
+
+    //--------------------------------------------
+
+    // getElementById方法，通过id值获取页面中的一个元素。参数是id值的字符串，返回值是这个元素对象。
+    var box = document.getElementById("box");
+    console.log(box);
+
+    //--------------------------------------------
+
+    // getElementsByClassName，通过class属性获取页面中的一些元素，参数是class值的字符串，返回值是一个类数组（并不是真正的数组，但是可以像数组一样通过[索引]访问内容）
+    var items = document.getElementsByClassName("item");
+    console.log(items);
+    console.log(items[0]);
+
+    //-------------------------------------------
+
+    //getElementsByTagName方法，根据标签名名获取页面中的一些元素，参数是标签名字符串，返回值是一个类数组，数组中存放这些元素对象。
+    var divs = document.getElementsByTagName("div");
+    console.log(divs);
+
+    //--------------------------------------------
+
+    //querySelector方法，根据元素选择器获取页面中的一个元素，参数是选择器的字符串，返回值是页面中第一个符合选择器的元素。
+    var li = document.querySelector("#list li");
+    console.log(li);
+
+    // querySelectorAll方法，根据选择器获取页面中的一些元素，参数是选择器，返回值是一个类数组，数组中存放这些元素。
+    var lis = document.querySelectorAll("#list li");
+    console.log(lis);
+
+</script>
+
+</html>

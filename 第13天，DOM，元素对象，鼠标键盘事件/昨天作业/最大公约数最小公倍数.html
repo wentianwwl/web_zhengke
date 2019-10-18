@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    
+    function zdgys(m,n){
+        while(m%n!=0){
+            var temp = m%n;
+            m = n;
+            n = temp;
+        }
+        return n;
+    }
+
+    console.log(zdgys(50,63));
+
+    function zxgbs(m,n){
+        return m*n/zdgys(m,n);
+    }
+
+    console.log(zxgbs(15,20));
+
+    
+
+</script>
+
+
+</html>

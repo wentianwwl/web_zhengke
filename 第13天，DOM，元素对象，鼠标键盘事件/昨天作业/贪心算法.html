@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    var apples = [0.3,0.25,0.16,0.4,0.12,0.32,0.44,0.66,0.43,0.33,0.31,0.3,3,2,4,0.25,0.16,0.4,0.12,0.32,0.44,0.66,0.43,0.33,0.31,0.54];
+
+
+    apples.sort();
+
+    var weight = 0;
+    var count = 0;
+
+    for(var i = 0;i<apples.length;i++){
+        if(weight+apples[i]<10){
+            weight+=apples[i];
+            count++;
+        }else{
+            break;
+        }
+    }
+
+    console.log("一共装了"+i+"个苹果");
+
+
+
+
+
+</script>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+
+    //设置一个定时器事件，第一个参数是一个函数，表示事件触发时所执行的函数。第二个参数是定时器多少毫秒后触发。返回值是一个定时器。
+    var t1 = setTimeout(function(){
+        console.log("时间到");
+    },1000);
+
+    //定时器在触发之前，可以取消。
+    clearTimeout(t1);
+
+    //-------------------------------------------
+
+    //setinterval，开启一个无限次的定时器，参数是时间函数和间隔事件，返回值是定时器。
+    var t2 = setInterval(function(){
+        console.log("第二种定时器");
+    },1000);
+
+    clearInterval(t2);
+
+
+</script>
+
+
+</html>

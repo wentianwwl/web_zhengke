@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style lang="">
+        div{
+            width: 100px;
+            height: 50px;
+        }
+        #btn{
+            background-color: blue;
+        }
+
+        #red{
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 元素的onclick属性，用于设置鼠标点击元素事件所绑定的代码。html属性中不适合写大量的js代码，所以会将这些代码写在一个函数中，然后onclick中只写这个函数的调用 -->
+    <!-- 事件属性中调用函数时，可以传递一个event对象作为参数，这个对象中包含了本次事件的详细信息。 -->
+    <div id="btn" onclick="btnClick(event)"></div>
+    <div id="red" onclick="btnClick(event)"></div>
+</body>
+
+<script>
+    //event,事件。在前端开发中，事件表示发生的某件事情，例如鼠标点击、鼠标移动、键盘按下、窗口滚动、窗口大小改变、请求完成、定时器触发等都是事件。
+    //整个前端js的开发，基本都是在对不同的事件作出不同的响应。
+
+    function btnClick(e){
+        // 事件对象e中，包含本次事件的信息。
+        //e.target表示触发本次事件的元素。
+        // console.log(e.target);
+
+        // var color;
+        // if(e.target.id=="btn"){
+        //     color = "蓝色";
+        // }else{
+        //     color = "红色";
+        // }
+
+        //条件运算符，格式：
+        //布尔值或表达式?值或表达式1:值或表达式2
+        //当?前的布什尔为真时，整个表达式的值为值1，否则为值2
+        var color = e.target.id=="btn"?"蓝色":"红色";
+        
+
+        console.log(color+"的div被点击了");
+        console.log("这是btnClick函数中的输出");
+    }
+
+    // 如果多个元素事件触发时执行的代码毫不相关，则对不同的元素绑定不同的函数。
+    // 如果多个元素事件触发时要执行的代码相同或类似，则可以给这些元素绑定同一个函数，然后在函数中通过e.target区分是哪个元素触发的事件。
+
+
+    //--------------------------------------------
+    //事件绑定的另一种方式:
+    //通过元素对象进行绑定，元素对象可以是从页面中获取的，也可以是通过代码创建的。
+    var d3 = document.createElement("div");
+    d3.style.backgroundColor = "green";
+    document.body.appendChild(d3);
+
+    // 元素对象.事件方法名 = 函数 
+    // 也可以为一个元素添加事件监听。赋值的函数可以是已声明的函数，也可以是匿名函数。
+    // 这个函数被称为事件绑定的函数，当onclick事件触发，这个函数就会被调用，通过这种方式绑定的函数调用时总是会传递event对象。
+
+    // d3.onclick = btnClick;
+    d3.onclick = function(e){
+        console.log(e);
+        console.log("绿色div点击了");
+    }
+
+
+</script>
+
+
+</html>

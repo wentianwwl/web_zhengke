@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+        }
+
+        .colorful{
+            border: solid 5px green;
+            color: yellow;
+        }
+
+
+
+    </style>
+</head>
+
+<body>
+    <div id="box" class="big small">方块</div>
+    <a id="link">百度一下</a>
+    <div id="second" att2>123123</div>
+
+    <div id="third" data-abc="123">3</div>
+
+</body>
+
+<script>
+    // 获取元素对象之后，可以通过元素对象修改或设置元素的标签属性。
+    var box = document.getElementById("box");
+    // console.log(box);
+    var link = document.getElementById("link");
+
+
+    //对于标签的标准属性（标签自带的属性，非自定义属性），可以直接通过 元素对象.属性 设置，例如style,src,href等。
+    link.href = "http://www.baidu.com";
+
+    // style由于是一个样式列表，直接写字符串值不方便，所以可以将style属性认为是一个对象，每一种样式都是style对象的一个属性。
+    // box.style = "background-color:red;width:200px;";
+    box.style.backgroundColor = "red";
+    // 通过style设置的是行内样式，优先级较高，设置的值必须是字符串。
+    box.style.width = "200px";
+
+    //----------------------------------------------
+
+    //对于元素的class属性，可以设置多个值，是一个class列表，在修改时一般都是向列表中添加一个值或删除一个值，所以class属性不能直接修改。
+    // box.class = "colorful";//错误写法
+
+    // 修改元素的class属性，要使用classList。
+
+    //classList.add()，为元素添加一个class值。
+    box.classList.add("colorful");
+
+    //classList.remove(),删除元素的一个class值。
+    box.classList.remove("big");
+
+    //classList.contains()，判断元素的class列表中是否包含某个class值。
+    var hasSmall = box.classList.contains("small");
+    console.log(hasSmall);
+
+    //classList.toggle()，切换元素的某个class值（有则删除，无则添加）。
+    box.classList.toggle("small");
+
+    //对于元素样式的修改，一般不修改style属性，而是将修改的样式写在一个class中，然后对元素进行添加/删除class。
+    //----------------------------------------------
+
+    //可以直接为元素对象添加一个属性，但是这个属性仅存在于元素对象上，并不会添加到元素标签上。
+    var second = document.getElementById("second");
+    second.abc = "custom";
+
+    //setAttribute()方法，为元素设置一个属性，可以是自定义属性
+    second.setAttribute("att1","v1");
+
+    //hasAttribute，判断元素是否包含某个属性(包含不一定有值)。
+    var hasAtt1 = second.hasAttribute("att2");
+    console.log(hasAtt1);
+
+    //removeAttribute，删除一个属性。
+    second.removeAttribute("att2");
+
+    //getAttribute，获取元素的某个属性的值。
+    var val = second.getAttribute("att1");
+    console.log(val);
+
+    //------------------------------------------
+
+    var third = document.getElementById("third");
+
+    //如果自定义属性以data-开头，那么这个属性可以直接通过元素对象的dataset访问。
+    console.log(third.dataset.abc);
+
+
+</script>
+
+</html>

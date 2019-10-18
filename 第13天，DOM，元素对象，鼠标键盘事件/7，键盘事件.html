@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+
+    //只有能成为焦点的元素才能监听键盘事件。
+
+    //onkeypress键盘某个键的点击事件。
+    document.body.onkeydown = function(a){
+        // console.log("某个键被点了");
+
+        //通过事件对象e的keyCode属性可以区分是哪个键被点击了。
+        console.log(a.keyCode);
+    }
+
+</script>
+
+
+</html>

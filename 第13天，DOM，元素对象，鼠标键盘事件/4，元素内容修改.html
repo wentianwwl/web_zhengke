@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title">原始文本</h1>
+
+    <h2 id="t2">第二标题</h2>
+</body>
+
+<script>
+    var title = document.getElementById("title");
+
+    //通过元素对象的innerHTML属性，可以设置元素的内容。
+    console.log(title.innerHTML);
+    title.innerHTML = "<i>这是通过js设置的内容</i>";
+
+
+    var t2 = document.getElementById("t2");
+    t2.textContent = "<i>这是通过js设置的内容</i>";
+
+    // innerHTML和textContent属性都可以设置元素的内容，区别是innerHTML会将字符串中的标签作为元素解析，而textContent会将字符串中的标签作为文本显示。
+
+</script>
+
+</html>

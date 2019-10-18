@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .ul1{
+            width: 400px;
+            height: 50px;
+            display: flex;
+        }
+        .ul1 li{
+            width: 100px;
+            height: 50px;
+            border: 1px solid green;
+            list-style: none;
+        }
+        .ul2{
+            width: 400px;
+            height: 400px;
+            position: relative;
+        }
+        .ul2 li{
+            width: 400px;
+            height: 400px;
+            border: 1px solid red;
+            position: absolute;
+            list-style: none;
+            display: none;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var oBox = document.getElementById("box"); 
+            var aUl = oBox.getElementsByTagName("ul");
+            var aMenu = aUl[0].getElementsByTagName("li");
+            var aLi = aUl[1].getElementsByTagName("li");
+            for(var i = 0; i < aMenu.length; i++){
+                aMenu[i].index = i;
+                aMenu[i].onclick = function(){
+                    for(var j = 0; j < aMenu.length; j++){
+                        aMenu[j].style.backgroundColor = "#fff";
+                        aLi[j].style.display = "none";
+                    }
+                    this.style.backgroundColor = "#0ff";
+                    aLi[this.index].style.display = "block";
+                }
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <div id="box">
+        <ul class="ul1">
+            <li style="background-color:#0ff">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+
+        </ul>
+        <ul class="ul2">
+            <li style="display:block">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+    </div>
+</body>
+</html>

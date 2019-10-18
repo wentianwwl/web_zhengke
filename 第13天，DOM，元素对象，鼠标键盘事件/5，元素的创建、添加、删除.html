@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>123123123</div>
+    
+</body>
+
+<script>
+
+    //document.createElement，创建一个新的元素对象，参数是元素的标签名，返回值就是所创建的对象。
+    var title = document.createElement("h1");
+
+    title.innerHTML = "这是通过js创建的h1标签";
+
+    //新创建的元素对象不能立即显示，需要把它添加到DOM中（添加到一个父元素上）。
+    // 元素对象.appendChild()方法，在元素的最后添加一个子元素。
+    document.body.appendChild(title);
+
+    //------------------------------------------
+
+    // var ul = document.createElement("ul");
+    // document.body.appendChild(ul);
+
+
+    // var li = document.createElement("li");
+    // li.innerHTML = "一个li";
+    // ul.appendChild(li);
+
+
+    var ul = document.createElement("ul");
+    document.body.appendChild(ul);
+
+    for(var i = 0;i<3;i++){
+        var li = document.createElement("li");
+        li.innerHTML = "第"+(i+1)+"个";
+        ul.appendChild(li);
+    }
+
+    //-------------------------------------
+    //元素删除
+
+    var li3 = document.querySelector("li:nth-of-type(3)");
+
+    console.log(li3);
+
+    //parentElement属性，元素的父元素。
+    console.log(li3.parentElement);
+    
+
+    //removeChild方法，删除一个子元素。
+    ul.removeChild(li3);
+
+    // li3.parentElement.removeChild(li3);
+
+    // children属性，元素的所有子元素，是一个类数组。
+    console.log(ul.children);
+
+</script>
+
+</html>
